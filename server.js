@@ -1,12 +1,13 @@
 // Requiring necessary npm packages
 const express = require("express");
-const session = require("express-session");
+//const session = require("express-session");
+const exphbs = require("express-handlebars");
 // Requiring passport as we've configured it
 //const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
-const db = require("./models");
+//const db = require("./models/jobs");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -24,10 +25,20 @@ app.use(express.static("public"));
 //require("./routes/html-routes.js")(app);
 //require("./routes/api-routes.js")(app);
 
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 //GET
 app.get('/', (req, res) => {
-    res.send('hello');
+    res.render('index');
 });
+
+// Import routes and give the server access to them.
+var routes = require("./routes/jobcontroller.js");
+
+app.use(routes);
+
 
 // Syncing our database and logging a message to the user upon success
 //db.sequelize.sync().then(() => {
