@@ -28,20 +28,20 @@ app.get('/', (req, res) => {
 });
 
 
-// db.sequelize.sync().then(() => {
-//    app.listen(PORT, () => {
-//        console.log(
-//            "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-//            PORT,
-//            PORT
-//        );
-//    });
-// });
-
-app.listen(PORT, () => {
-    console.log(
-        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-        PORT,
-        PORT
-    );
+db.sequelize.sync().then(() => {
+   app.listen(PORT, () => {
+       console.log(
+           "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+           PORT,
+           PORT
+       );
+   });
 });
+
+// app.listen(PORT, () => {
+//     console.log(
+//         "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+//         PORT,
+//         PORT
+//     );
+// });
