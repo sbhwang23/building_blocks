@@ -25,6 +25,22 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/bucket-list", (req, res) => {
+    db.BucketList.create({
+      userId: req.body.userId,
+      title: req.body.title,
+      description: req.body.description,
+      category: req.body.category,
+      collaborators: req.body.collaborators,
+    })
+      .then(() => {
+        res.end();
+      })
+      .catch(err => {
+        res.status(401).joson(err);
+      })
+  });
+
  
   app.get("/logout", (req, res) => {
     req.logout();
