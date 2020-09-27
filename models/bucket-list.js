@@ -1,5 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
     const BucketList = sequelize.define("BucketList", {
+      userId: {
+          type: DataTypes.STRING
+      },
       title: {
         type: DataTypes.STRING,
         allowNull: false
