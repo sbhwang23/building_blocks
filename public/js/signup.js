@@ -1,41 +1,43 @@
-$(document).ready(() => {
-  
-  const signUpForm = $("form.signup");
-  const emailInput = $("input#email-input");
-  const passwordInput = $("input#password-input");
+//$(document).ready(() => {
 
-  
-  signUpForm.on("submit", event => {
+const signUpForm = $("form.signup");
+const emailInput = $("input#email-input");
+const firstName = $("#first-name");
+const lastName = $("#last-name");
+const passwordInput = $("input#password-input");
+
+
+signUpForm.on("submit", event => {
     event.preventDefault();
     const userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
     };
 
     if (!userData.email || !userData.password) {
-      return;
+        return;
     }
-    
+
     signUpUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
-  });
+});
 
- 
-  function signUpUser(email, password) {
+
+function signUpUser(email, password) {
     $.post("/api/signup", {
-      email: email,
-      password: password
-    })
-      .then(() => {
-        window.location.replace("/members");
-        
-      })
-      .catch(handleLoginErr);
-  }
+            email: email,
+            password: password
+        })
+        .then(() => {
+            window.location.replace("/members");
 
-  function handleLoginErr(err) {
+        })
+        .catch(handleLoginErr);
+}
+
+function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
-  }
-});
+}
+//});
