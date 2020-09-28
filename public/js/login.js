@@ -24,7 +24,7 @@ $(document).ready(() => {
 
     function loginUser(email, password) {
         console.log("posting")
-        $.post("/", {
+        $.get("/member", {
             email: email,
             password: password
         })
