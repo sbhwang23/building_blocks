@@ -3,23 +3,28 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
-    
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
+    //LANDING HOME PAGE where user can login OR JOIN
+    app.get("/", (req, res) => {
 
-  app.get("/login", (req, res) => {
-    
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
-  });
+        res.render("loginpage", { layout: "login" });
+    });
+    //SIGN UP PAGE
+    app.get("/join", (req, res) => {
+        res.render("signuppage", { layout: "signup" });
+    });
+    app.get("/member", (req, res) => {
+        res.render("member", { layout: "main" });
+    });
+    app.get("/map", (req, res) => {
+        res.render("maps", { layout: "activities" });
+    });
+    app.get("/mybucketlist", (req, res) => {
+        res.render("mybucketlist", { layout: "activities" });
+    });
+    app.get("/newactivity", (req, res) => {
+        res.render("new-activity", { layout: "activities" });
+    });
+    app.get("/search", (req, res) => {
+        res.render("search", { layout: "activities" });
+    });
 };
