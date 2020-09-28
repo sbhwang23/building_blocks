@@ -23,6 +23,16 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
+// Set Handlebars.
+const handlebars = require("express-handlebars");
+
+app.set("view engine", "hbs");
+
+app.engine("hbs", handlebars({
+    layoutsDir: `${__dirname}/views/layouts`,
+    extname: 'hbs'
+}));
+
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
