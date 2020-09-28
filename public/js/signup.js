@@ -1,43 +1,46 @@
-//$(document).ready(() => {
+$(document).ready(() => {
 
-const signUpForm = $("form.signup");
-const emailInput = $("input#email-input");
-const firstName = $("#first-name");
-const lastName = $("#last-name");
-const passwordInput = $("input#password-input");
-
-
-signUpForm.on("submit", event => {
-    event.preventDefault();
-    const userData = {
-        email: emailInput.val().trim(),
-        password: passwordInput.val().trim()
-    };
-
-    if (!userData.email || !userData.password) {
-        return;
-    }
-
-    signUpUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
-});
+    const signUpForm = $("form.signup");
+    const emailInput = $("input#email-input");
+    // const firstInput = $("input#firstname-input");
+    // const lastInput = $("input#lastname-input");
+    const passwordInput = $("input#password-input");
 
 
-function signUpUser(email, password) {
-    $.post("/api/signup", {
+    signUpForm.on("submit", event => {
+        event.preventDefault();
+        const userData = {
+            // firstname: firstInput.val().trim(),
+            // lastname: lastInput.val().trim(),
+            email: emailInput.val().trim(),
+            password: passwordInput.val().trim()
+        };
+
+        if (!userData.email || !userData.password) {
+            return;
+        }
+
+        signUpUser(userData.email, userData.password);
+        emailInput.val("");
+        passwordInput.val("");
+    });
+
+
+    function signUpUser(email, password) {
+        console.log("signup")
+        $.post("/api/signup", {
             email: email,
             password: password
         })
-        .then(() => {
-            window.location.replace("/members");
+            .then(() => {
+                window.location.replace("/member");
 
-        })
-        .catch(handleLoginErr);
-}
+            })
+            .catch(handleLoginErr);
+    }
 
-function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-}
-//});
+    function handleLoginErr(err) {
+        $("#alert .msg").text(err.responseJSON);
+        $("#alert").fadeIn(500);
+    }
+});

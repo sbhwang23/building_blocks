@@ -6,7 +6,7 @@ const router = express.Router();
 //const job = require("../models/jobs.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
     //job.all(function(data) {
     //    const hbsObject = {
     //        jobs: data

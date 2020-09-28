@@ -7,6 +7,7 @@ $(document).ready(() => {
 
     loginForm.on("submit", event => {
         event.preventDefault();
+        console.log('submitted')
         const userData = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
@@ -22,12 +23,13 @@ $(document).ready(() => {
     });
 
     function loginUser(email, password) {
-        $.post("/api/login", {
-                email: email,
-                password: password
-            })
+        console.log("posting")
+        $.post("/", {
+            email: email,
+            password: password
+        })
             .then(() => {
-                window.location.replace("/members");
+                window.location.replace("/member");
             })
             .catch(err => {
                 console.log(err);
