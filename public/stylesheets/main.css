@@ -5,6 +5,7 @@
     color: #333;
     text-align: center;
     text-size-adjust: auto;
+    overflow-wrap: break-word;
 }
 
 :root {
@@ -22,6 +23,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 1.5rem;
+    transition: all .2s linear;
 }
 
 .grid-container>* {
@@ -63,8 +65,12 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-column-gap: 4em;
+    grid-row-gap: 1.8em;
     height: 100%;
     width: 100%;
+    background-color: rgba(240, 248, 255, .5);
+    padding-bottom: 2em;
 }
 
 .grid-container-1 {
@@ -90,6 +96,29 @@ header {
     justify-content: center;
 }
 
+.welcome {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 3.2rem;
+    text-shadow: -8px 3px 20px #b2bde3;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    background-color: rgba(91, 150, 193, 1);
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
+}
+
 .username {
     font-size: 1.6rem;
     height: 100%;
@@ -98,7 +127,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.div-username {
     background-color: rgba(145, 228, 254, 1);
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
 }
 
 
@@ -109,12 +145,14 @@ h1 {
     padding: 0em .18em;
     font-family: 'Beth Ellen', cursive;
     color: #ffffff;
+    text-shadow: 1px 1px #222260, 1.5px 1.5px #222260, 2px 2px #222260;
 }
 
 h2 {
     font-size: 1.8rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    text-shadow: 1px 1px #222260, 1.5px 1.5px #222260, 2px 2px #222260;
 }
 
 h3 {
@@ -132,39 +170,24 @@ h3 {
     padding: 2em 1em 1em 1em;
 }
 
-.welcome {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: .5em;
-    border-bottom: .7em solid rgba(179, 244, 97, 1);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(91, 150, 193, 1);
-}
-
 .my-list {
     color: rgba(91, 150, 193, 1);
+    padding: .8em;
 }
 
 .new-activity {
     color: rgba(255, 255, 255, 1);
+    padding: .8em;
 }
 
 .search {
     color: rgba(255, 255, 255, 1);
+    padding: .8em;
 }
 
 .map {
     color: rgba(255, 255, 255, 1);
+    padding: .8em;
 }
 
 
@@ -178,29 +201,40 @@ h3 {
     height: 40%;
 }
 
-.button {
-    border: .5em solid rgb(164 227 255);
-    background-color: rgba(91, 150, 193, 1);
-    border-radius: 1em;
-    width: 10em;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 1em 2em;
-    font-family: 'Montserrat', sans-serif;
-    transition: all .2s linear;
-}
-
-.button:hover {
-    background-color: rgba(179, 244, 97, 1);
+.grid-container:hover {
     cursor: pointer;
-}
-
-.btn-search {
-    background-color: rgba(189, 207, 220, 1);
 }
 
 
 /*IMAGES*/
+
+.square-1 {
+    background-repeat: no-repeat;
+    background-image: url(images/icons/rocket.svg);
+    background-position-y: 7em;
+    background-position-x: center;
+}
+
+.square-2 {
+    background-repeat: no-repeat;
+    background-image: url(images/icons/moon-dreamy.svg);
+    background-position-y: 7em;
+    background-position-x: center;
+}
+
+.square-3 {
+    background-repeat: no-repeat;
+    background-image: url(images/icons/telescope.svg);
+    background-position-y: 7em;
+    background-position-x: center;
+}
+
+.square-4 {
+    background-repeat: no-repeat;
+    background-image: url(images/icons/alien-obduction.svg);
+    background-position-y: 7em;
+    background-position-x: center;
+}
 
 .image-square {
     height: 80%;
@@ -256,32 +290,37 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 1em;
+    margin-bottom: 1em;
     height: 100%;
     width: 100%;
+    background-color: rgba(240, 248, 255, .5);
 }
 
 .grid-container-10 {
     grid-column: span 1;
     grid-row: span 1;
     align-items: flex-end;
-    height: 80%;
-    background-color: rgba(179, 244, 97, 1);
+    height: 60%;
+    background-color: rgb(145 228 254);
+    margin: 1.8em 2.2em 2.2em 2.2em;
 }
 
 .slogan-container {
     width: 100%;
-    height: 80%;
+    height: 95%;
     background-color: rgb(255 255 255);
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
 }
 
 .main-grid-container {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 1.3em;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 100%;
-    width: 100%;
 }
 
 .square {
@@ -302,22 +341,34 @@ section {
     grid-column: span 1;
     grid-row: span 1;
     background-color: rgba(255, 255, 255, 1);
+    box-shadow: 4px 4px 5px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0, 41, 158, 0.3);
 }
 
 .grid-container-101 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: rgba(145, 228, 254, 1);
+    box-shadow: -4px 4px 5px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -4px 4px 5px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -4px 4px 5px 0px rgba(0, 41, 158, 0.3);
 }
 
 .grid-container-102 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: rgba(91, 150, 193, 1);
+    box-shadow: 3px -3px 5px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: 3px -3px 5px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: 3px -3px 5px 0px rgba(0, 41, 158, 0.3);
 }
 
 .grid-container-103 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: rgba(179, 244, 97, 1);
+    box-shadow: -3px -3px 5px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -3px -3px 5px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -3px -3px 5px 0px rgba(0, 41, 158, 0.3);
 }
