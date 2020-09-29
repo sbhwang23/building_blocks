@@ -6,26 +6,29 @@
 </head>
 
 <body>
-	<header>
-		<div class="header-grid-container">
-			<div class="grid-container-1">
-				<div class="welcome">
-					<h2 class="welcome">Welcome</h2>
+	<div class="wrapper">
+		<header>
+			<div class="header-grid-container center-flex">
+				<div class="grid-container-1">
+					<div class="welcome">
+						<h2 class="welcome">Welcome</h2>
+					</div>
+				</div>
+				<div class="grid-container-2 center-flex">
+					<div class="logo-container">
+						<h1>SE7EN</h1>
+						<img src="" alt="">
+					</div>
+				</div>
+				<div class="grid-container-3 center-flex">
+					<div class="username">
+						<h3 class="username">{{username}}@USERNAME</h3>
+					</div>
 				</div>
 			</div>
-			<div class="grid-container-2">
-				<div class="logo-container">
-					<img src="" alt="">
-				</div>
-			</div>
-			<div class="grid-container-3">
-				<div class="username">
-					<h3 class="username">{{username}}</h3>
-				</div>
-			</div>
-		</div>
-	</header>
-	{{{ body }}}
+		</header>
+		<main class="begin-view"{{{ body }}}</main>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
