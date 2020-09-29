@@ -67,6 +67,7 @@
         width: 100%;
         background-color: rgba(240, 248, 255, .5);
         padding-bottom: 2em;
+        max-width: 60em;
     }
     
     .grid-container-1 {
@@ -313,6 +314,7 @@
         height: 100%;
         width: 100%;
         background-color: rgba(240, 248, 255, .5);
+        max-width: 60em;
     }
     
     .grid-container-10 {
