@@ -1,30 +1,40 @@
-{{!-- <form class="signup">
-    <input id="first-name" type="text" name="firstname" placeholder="First Name">
-    <input id="last-name" type="text" name="lastname" placeholder="Last Name">
-    <input id="email-input" type="email" name="email" id="email-input" placeholder="Email">
-    <input id="password-input" type="password" name="password" id="" placeholder="Password">
-    <div class="join">
-        <a class="buttons signup" href="">SUBMIT</a>
-    </div>
-</form> --}}
+    <!DOCTYPE html>
+<html lang="en">
 
-<form class="signup">
-    <div class="form-group">
-        {{!-- <input type="firstname" class="form-control" id="firstname-input" placeholder="First Name">
-        <input type="lastname" class="form-control" id="lastname-input" placeholder="Last Name"> --}}
-        <input type="email" class="form-control" id="email-input" placeholder="Email">
-        <input type="password" class="form-control" id="password-input" placeholder="Password">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Montserrat:ital,wght@0,500;1,200;1,400&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/signup.css">
+    <title>se7en</title>
+</head>
+<div class="container">
+    <div class="grid-style">
+        <div class="grid-1">
+            <form class="signup">
+                <div class="form-group">
+                    <h2 class="directions">Your<span class="fancy"> Email</span></h2>
+                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                    <h2 class="directions">Make a<span class="fancy"> Password</span></h2>
+                    <input type="password" class="form-control" id="password-input" placeholder="Password">
+                </div>
+                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span> <span class="msg"></span>
+                </div>
+                <h2 class="directions"><span class="fancy">Fin</span></h2>
+                <button type="submit" class="btn btn-default">JOIN!</button>
+            </form>
+        </div>
+        <div class="grid-2">
+            <div class="login">
+            <p>or log in <a href="/">HERE</a></p>
+            </div>
+        </div>
     </div>
-    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span> <span class="msg"></span>
-    </div>
-    <button type="submit" class="btn btn-default">Sign Up</button>
-</form>
-<br />
-<p>Or log in <a href="/">here</a></p>
-</div>
-</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

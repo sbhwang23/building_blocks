@@ -147,6 +147,7 @@
         font-size: 1.8rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
+        transition: 0.5s linear;
         text-shadow: 1px 1px #222260, 1.5px 1.5px #222260, 2px 2px #222260;
     }
     
