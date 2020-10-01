@@ -1,0 +1,146 @@
+.grid-container-3 {
+    align-items: center;
+    background-color: #BDCFDC;
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
+}
+
+.sign-up-logo {
+    background-repeat: no-repeat;
+    background-image: url("images/icons/rocket-launch.svg");
+    background-position-y: center;
+    background-position-x: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+
+.grid-style {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    height: 80%;
+    margin-top: 2em;
+}
+
+.grid-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(145, 228, 254, .8);
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
+    padding: 4em;
+}
+
+.grid-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 2em;
+}
+
+.sign-up {
+    width: 80%;
+    height: 100%;
+}
+
+input {
+    padding: .6em;
+    border: .2em solid #5c95c1;
+    margin-bottom: 1em;
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
+}
+
+
+/*WORDS*/
+
+h2:hover {
+    text-shadow: 1px 1px #91E4FE, 2px 2px #91E4FE, 3px 3px #91E4FE, 4px 4px #91E4FE, 5px 5px #91E4FE, 6px 6px #91E4FE;
+}
+
+.directions {
+    font-size: 1.6rem;
+    color: #333;
+    text-shadow: none;
+    margin-bottom: 1em;
+}
+
+.directions:hover {
+    text-shadow: none;
+    left: 0px;
+    top: 0px;
+    position: initial;
+}
+
+.fancy {
+    color: white;
+    font-family: 'Beth Ellen', cursive;
+    font-size: 2.0rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+p>a {
+    color: #5c95c1;
+    transition: 0.4s linear;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p>a:hover {
+    cursor: pointer;
+    font-size: 2.8rem;
+}
+
+
+/*BUTTONS*/
+
+.btn {
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    transition: 0.5s linear;
+}
+
+.btn-default {
+    width: 7em;
+    text-transform: uppercase;
+    border: .2em solid #5c95c1;
+    padding: .4em;
+    background-color: #5c95c1;
+    color: white;
+    font-size: 1.4em;
+    border-radius: 1em;
+    margin-top: .2em;
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+}
+
+.btn-default:hover {
+    cursor: pointer;
+    font-size: 1.8em;
+}
