@@ -127,8 +127,8 @@
     h2 {
         font-size: 1.8rem;
         font-weight: 700;
-        transition: 0.5s linear;
-        text-shadow: 1px 1px rgba(145, 228, 254, 1), 1.5px 1.5px rgba(145, 228, 254, 1), 2px 2px rgba(145, 228, 254, 1);
+        transition: 0.3s linear;
+        text-shadow: .5px .5px rgba(145, 228, 254, 1), 1px 1px rgba(145, 228, 254, 1), 1.5px 1.5px rgba(145, 228, 254, 1);
     }
     
     h2:hover {
