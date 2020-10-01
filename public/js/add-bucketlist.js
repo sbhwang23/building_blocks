@@ -15,7 +15,7 @@ $(function() {
             type: 'POST',
             data: newBucketListItem
         }).then(() => {
-            console.log("bucket list item added");
+            window.location.replace("/mybucketlist");
         })
 
     });
