@@ -25,6 +25,10 @@
     width: 100%;
 }
 
+.grid-2 {
+    align-items: flex-start;
+}
+
 .circle-container {
     box-shadow: -24px -24px 0px #243c4d, 24px 24px 0px #92f0ff;
     height: 25em;
@@ -42,12 +46,51 @@
     box-shadow: 28px 28px 0px #305066, -28px -28px 0px #86ddff;
 }
 
+.map-box-container {
+    height: 100%;
+    width: 100%;
+}
+
 .search-container {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.grid-style-display {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr;
+    background-color: #5c95c1;
+    min-height: 25em;
+    min-width: 25em;
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
+    line-height: 1.5;
+}
+
+.grid-close-1 {
+    grid-row: span 1;
+    grid-column: span 1;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.grid-close-2 {
+    grid-row: span 1;
+    grid-column: span 1;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -71,7 +114,7 @@
 input {
     padding: .6em;
     border: .2em solid #5c95c1;
-    margin-bottom: 1em;
+    margin-top: 1em;
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -119,4 +162,22 @@ a:hover {
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+}
+
+.close {
+    color: white;
+    font-size: 2.0rem;
+    font-family: "montserrat", sans-serif;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding-right: 2em;
+    padding-top: 1em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.hidden {
+    display: none;
 }
