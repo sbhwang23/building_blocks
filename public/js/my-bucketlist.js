@@ -5,4 +5,5 @@ $(document).ready(() => {
     } else {
         console.log("suckah")
     }
-});
+  $(document).ready(() => {
+    });
