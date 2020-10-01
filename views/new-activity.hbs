@@ -1,50 +1,39 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Montserrat:ital,wght@0,500;1,200;1,400&family=Shrikhand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <title>se7en</title>
-</head>
-
-<body>
+<div class="wrapper">
+    {{> header }}
+    
     <div class="form">
-    <form class="create-form">
-        <h2>What do you want to add to your bucket list?</h2>
-        <input type="text" id="title" name="title">
+        <form class="create-form">
+            <h2>What do you want to add to your bucket list?</h2>
+            <input type="text" id="title" name="title">
 
-        <h2>Give a brief description</h2>
-        <textarea id="description" name="description"></textarea>
+            <h2>Give a brief description</h2>
+            <textarea id="description" name="description"></textarea>
 
-        <h2>How would you categorize it?</h2>
-        <input type="radio" id="adeventure" value="adventure" name="category">
-        <label for="adventure">Adventure</label>
-        <input type="radio" id="homebody" value="homebody" name="category">
-        <label for="homebody">Homebody</label>
-        <input type="radio" id="create" value="create" name="category">
-        <label for="create">Create</label>
-        <input type="radio" id="take-action" value="take-action" name="category">
-        <label for="take-action">Take Action</label>
-        <input type="radio" id="other" value="other" name="category">
-        <label for="other">Other</label>
+            <h2>How would you categorize it?</h2>
+            <input type="radio" id="adeventure" value="adventure" name="category">
+            <label for="adventure">Adventure</label>
+            <input type="radio" id="homebody" value="homebody" name="category">
+            <label for="homebody">Homebody</label>
+            <input type="radio" id="create" value="create" name="category">
+            <label for="create">Create</label>
+            <input type="radio" id="take-action" value="take-action" name="category">
+            <label for="take-action">Take Action</label>
+            <input type="radio" id="other" value="other" name="category">
+            <label for="other">Other</label>
 
-        <h2>Are you seeing collaborators?</h2>
-        <input type="radio" id="true" value="true" name="collaborators">
-        <label for="true">yes</label>
-        <input type="radio" id="false" value="false" name="collaborators">
-        <label for="false">no</label>
+            <h2>Are you seeing collaborators?</h2>
+            <input type="radio" id="true" value="true" name="collaborators">
+            <label for="true">yes</label>
+            <input type="radio" id="false" value="false" name="collaborators">
+            <label for="false">no</label>
 
-        <h2>Where will it take place?</h2>
-        <input type="text" id="location" name="location">
-        <br>
-        <button class="submit" type="submit">Submit</button>
-    </form>
+            <h2>Where will it take place?</h2>
+            <input type="text" id="location" name="location">
+            <br>
+            <button class="submit" type="submit">Submit</button>
+        </form>
     </div>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/add-bucketlist.js"></script>
-</body>
-
-</html>
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+<script src="js/add-bucketlist.js"></script>
