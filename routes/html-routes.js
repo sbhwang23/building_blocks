@@ -18,7 +18,8 @@ module.exports = function (app) {
     app.get("/member", //isAuthenticated,
      (req, res) => {
         res.render("member", {
-            style: "style.css" });
+            style: "style.css"
+        });
     });
     app.get("/map", (req, res) => {
         res.render("maps", {
