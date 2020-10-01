@@ -1,7 +1,8 @@
-$(document).ready(() => {
+$(function() {
 
-    $("#submit").on("click", event => {
+    $(".create-form").on("submit", (event) => {
         event.preventDefault();
+
         const newBucketListItem = {
             title: $("#title").val().trim(),
             description: $("#description").val().trim(),
@@ -14,9 +15,9 @@ $(document).ready(() => {
             type: 'POST',
             data: newBucketListItem
         }).then(() => {
-            location.reload();
+            window.location.replace("/mybucketlist");
         })
 
-    })
+    });
 
 });
