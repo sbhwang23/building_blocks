@@ -1,3 +1,8 @@
+DROP DATABASE IF EXISTS userData;
 CREATE DATABASE userData;
 
 USE userData;
+
+DROP TABLE IF EXISTS BucketList;
+
+DROP TABLE IF EXISTS Users;
