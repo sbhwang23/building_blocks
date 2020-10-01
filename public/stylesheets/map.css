@@ -30,17 +30,20 @@
 .grid-2 {}
 
 .circle-container {
-    height: 100%;
-    width: 100%;
-    background-color: #BDCFDC;
+    box-shadow: -24px -24px 0px #243c4d, 24px 24px 0px #92f0ff;
+    height: 25em;
+    width: 25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .circle {
-    height: 100%;
-    width: 100%;
-    border-radius: 126px;
-    background: linear-gradient(225deg, #aabac6, #caddeb);
-    box-shadow: -24px 24px 0px #4c5358, 24px -24px 0px #ffffff;
+    height: 60%;
+    width: 60%;
+    border-radius: 87px;
+    background: #5B96C1;
+    box-shadow: 28px 28px 0px #305066, -28px -28px 0px #86ddff;
 }
 
 .search-container {
