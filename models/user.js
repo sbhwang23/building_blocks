@@ -16,6 +16,10 @@ module.exports = function (sequelize, DataTypes) {
     //     len: [1]
     //   }
     // },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -33,6 +37,7 @@ module.exports = function (sequelize, DataTypes) {
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
+
   User.addHook("beforeCreate", user => {
     user.password = bcrypt.hashSync(
       user.password,
@@ -40,5 +45,12 @@ module.exports = function (sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.BucketList, {
+      onDelete: "cascade"
+    });
+  };
+
   return User;
 };
