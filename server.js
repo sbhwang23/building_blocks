@@ -28,8 +28,9 @@ const handlebars = require("express-handlebars");
 app.set("view engine", "hbs");
 
 app.engine("hbs", handlebars({
-    layoutsDir: `${__dirname}/views/layouts`,
-    extname: 'hbs'
+    // layoutsDir: `${__dirname}/views/layouts`,
+    defaultLayout: "main",
+    extname: "hbs"
 }));
 
 db.sequelize.sync().then(() => {
