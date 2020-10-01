@@ -13,7 +13,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/signup", (req, res) => {
- 
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -26,7 +25,15 @@ module.exports = function (app) {
       });
   });
 
+  app.get("/api/bucket-list", (req, res) => {
+    db.BucketList.findAll({})
+      .then((list) => {
+        res.json(list);
+      });
+  });
+
   app.post("/api/bucket-list", (req, res) => {
+    console.log(req.body);
     db.BucketList.create({
       userId: req.body.userId,
       title: req.body.title,
@@ -34,11 +41,11 @@ module.exports = function (app) {
       category: req.body.category,
       collaborators: req.body.collaborators,
     })
-      .then(() => {
-        res.end();
+      .then((listItem) => {
+        res.json(listItem);
       })
       .catch(err => {
-        res.status(401).joson(err);
+        res.status(401).json(err);
       })
   });
 
