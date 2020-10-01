@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Montserrat:ital,wght@0,500;1,200;1,400&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/search.css">
     <title>se7en</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="grid-style">
+            <div class="grid grid-1">
+                <div class="circle-container">
+                    <div class="circle">
+                        <div class="map-box-container">
+                            <div class="search-container start-search">
+                                <h3 class="search">What if you...</h3>
+                            </div>
+                            <div class="search-container search-results hidden">
+                                <div class="grid-style-display">
+                                    <div class="grid-close-1 close-button">
+                                        <p class="close">x</p>
+                                    </div>
+                                    <div class="grid-close-2">
+                                        <h3 class="search idea"></h3>
+                                    </div>
+                                </div>
+                                <button class="btn btn-default list">+ to list</button>
+                                <button class="btn btn-default tryAgain">NEW IDEA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-2">
+                <button class="btn btn-default new-idea">NEW IDEA</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>
