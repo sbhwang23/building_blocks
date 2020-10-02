@@ -1,14 +1,12 @@
+/*CONTAINERS*/
+
 .container {
     align-items: flex-start;
 }
 
-.grid-container-3 {
-    align-items: center;
-    background-color: #BDCFDC;
-    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    border-radius: 1rem;
+.welcome {
+    color: #99b6e3;
+    text-shadow: none;
 }
 
 .sign-up-logo {
@@ -18,6 +16,33 @@
     background-position-x: center;
     height: 100%;
     width: 100%;
+}
+
+.logo-container {
+    background-color: rgb(166 233 255 / 54%);
+}
+
+.sign-up {
+    width: 80%;
+    height: 100%;
+}
+
+input {
+    padding: .6em;
+    border: .2em solid #e7f0fe;
+    background-color: #e7f0fe;
+}
+
+
+/*GRID*/
+
+.grid-container-3 {
+    align-items: center;
+    background-color: #BDCFDC;
+    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border-radius: 1rem;
 }
 
 .grid-style {
@@ -35,7 +60,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    background-color: rgba(145, 228, 254, .8);
+    background-color: rgb(189 207 220);
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -54,21 +79,12 @@
     padding-top: 2em;
 }
 
-.sign-up {
-    width: 80%;
-    height: 100%;
-}
-
-input {
-    padding: .6em;
-    border: .2em solid #97b5e3;
-}
-
 
 /*WORDS*/
 
 h1 {
-    text-shadow: 1px 1px #bdcfdc, 1.5px 1.5px #bdcfdc, 2px 2px #bdcfdc;
+    color: #f0f9ff;
+    text-shadow: 3px 1px #c8efff, 4px 1.5px #cbf1ff, 2px 2px #caf1ff;
 }
 
 h2:hover {
@@ -77,7 +93,7 @@ h2:hover {
 
 .directions {
     font-size: 1.6rem;
-    color: #5c95c1;
+    color: #8db1e3;
     text-shadow: none;
     margin-top: .5em;
 }
@@ -96,11 +112,11 @@ h2:hover {
 }
 
 p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 p>a {
-    color: #5c95c1;
+    color: #869dcb;
     transition: 0.4s linear;
     font-family: 'Montserrat', sans-serif;
 }

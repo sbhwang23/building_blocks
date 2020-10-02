@@ -12,6 +12,10 @@
     body {
         margin: 0 auto;
         min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     
      :root {
@@ -20,6 +24,7 @@
     }
     
     .wrapper {
+        width: 100%;
         margin: 0em auto;
         height: 100vh;
         background-color: rgba(240, 248, 255, .5);
@@ -52,7 +57,7 @@
         align-items: center;
         justify-content: center;
     }
-    /*MAIN*/
+    /*DEFAULT HEADER*/
     
     header {
         margin: 0 auto;
@@ -62,7 +67,6 @@
         width: 100%;
         height: 30%;
     }
-    /*Containers*/
     
     .header-grid-container {
         display: grid;
@@ -171,7 +175,8 @@
     }
     /*Words*/
     
-    h1 {
+    h1,
+    #hidden-logo {
         font-size: 3rem;
         padding: .3em;
         font-family: 'Beth Ellen', cursive;
@@ -224,3 +229,4 @@
         -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
         -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     }
+    /*TOGGLE CLASSES*/

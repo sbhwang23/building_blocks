@@ -1,12 +1,16 @@
 <div class="wrapper">
     {{> header }}
-
-    <div>
-        <ul class="user-list">
-            {{#each bucketListItems}}
-                <li>{{this.title}}</li>
-            {{/each}}
-        </ul>
+    <div class="container">
+        <div class="title-container">
+            <h2>{{username}}'s Bucket List</h2>
+        <div>
+        <div class="list-container">
+            <ul class="user-list">
+                {{#each bucketListItems}}
+                    <li>{{this.title}}</li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </div>
 

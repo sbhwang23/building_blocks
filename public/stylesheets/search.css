@@ -1,29 +1,7 @@
+/*CONTAINERS*/
+
 .container {
     align-items: center;
-}
-
-.grid-style {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr, 1fr;
-    grid-gap: 1em;
-    height: 80%;
-    margin-top: 2em;
-}
-
-.grid {
-    grid-column: span 1;
-    grid-row: span 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-.grid-2 {
-    align-items: center;
-    justify-content: center;
 }
 
 .circle-container {
@@ -51,6 +29,37 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*GRID*/
+
+.header-grid-container {
+    width: 80%;
+}
+
+.grid-style {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr, 1fr;
+    grid-gap: 1em;
+    height: 80%;
+    margin-top: 2em;
+}
+
+.grid {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-2 {
     align-items: center;
     justify-content: center;
 }
@@ -92,6 +101,10 @@
 
 
 /*WORDS*/
+
+h1 {
+    text-shadow: 1px 1px #243c4d, 1.5px 1.5px #243c4d, 2px 2px #243c4d;
+}
 
 h3 {
     color: white;
