@@ -39,6 +39,12 @@
                 <div class="grid grid-5">
                     <h3>Where will it take place?</h3>
                     <input type="text" id="location" name="location">
+                    <div id="map"></div>
+                    <div id="infowindow-content">
+                        <img src="" width="16" height="16" id="place-icon" />
+                        <span id="place-name" class="title"></span><br />
+                        <span id="place-address"></span>
+                    </div>
                 </div>
                 <div class="grid grid-6">
                     <button class="submit btn btn-default" type="submit">Submit</button>
@@ -48,5 +54,7 @@
     </div> 
 </div>
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/add-bucketlist.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZmqaXxP63ku66TlRw05Ua1wyD8bEaLkA&callback=initMap&libraries=places&v=weekly"></script>

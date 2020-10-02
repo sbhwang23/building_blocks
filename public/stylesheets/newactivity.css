@@ -80,3 +80,23 @@ label {
 input {
     border: .2em solid #a8bae3;
 }
+
+/*MAP*/
+
+#map {
+    display: none;
+    height: 200px;
+    width: 300px;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
