@@ -57,7 +57,7 @@
         align-items: center;
         justify-content: center;
     }
-    /*MAIN*/
+    /*DEFAULT HEADER*/
     
     header {
         margin: 0 auto;
@@ -67,7 +67,6 @@
         width: 100%;
         height: 30%;
     }
-    /*Containers*/
     
     .header-grid-container {
         display: grid;
@@ -229,3 +228,4 @@
         -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
         -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     }
+    /*TOGGLE CLASSES*/
