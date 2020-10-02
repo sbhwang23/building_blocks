@@ -23,16 +23,30 @@ $(document).ready(() => {
     });
 
     function loginUser(email, password) {
-        console.log("posting")
-        $.get("/member", {
-            email: email,
-            password: password
-        })
+        $.post("/api/login", {
+                email: email,
+                password: password
+            })
             .then(() => {
                 window.location.replace("/member");
+                // If there's an error, log the error
             })
             .catch(err => {
                 console.log(err);
             });
-    }
+    };
+
+    // function loginUser(email, password) {
+    //     console.log("posting")
+    //     $.get("/member", {
+    //         email: email,
+    //         password: password
+    //     })
+    //         .then(() => {
+    //             window.location.replace("/member");
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
 });

@@ -40,7 +40,7 @@
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     border-radius: 1rem;
-    padding: 4em;
+    padding: 4em 8em;
 }
 
 .grid-2 {
@@ -61,16 +61,15 @@
 
 input {
     padding: .6em;
-    border: .2em solid #5c95c1;
-    margin-bottom: 1em;
-    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    border-radius: 1rem;
+    border: .2em solid #97b5e3;
 }
 
 
 /*WORDS*/
+
+h1 {
+    text-shadow: 1px 1px #bdcfdc, 1.5px 1.5px #bdcfdc, 2px 2px #bdcfdc;
+}
 
 h2:hover {
     text-shadow: 1px 1px #91E4FE, 2px 2px #91E4FE, 3px 3px #91E4FE, 4px 4px #91E4FE, 5px 5px #91E4FE, 6px 6px #91E4FE;
@@ -78,9 +77,9 @@ h2:hover {
 
 .directions {
     font-size: 1.6rem;
-    color: #333;
+    color: #5c95c1;
     text-shadow: none;
-    margin-bottom: 1em;
+    margin-top: .5em;
 }
 
 .directions:hover {
@@ -114,25 +113,11 @@ p>a:hover {
 
 /*BUTTONS*/
 
-.btn {
-    text-decoration: none;
-    font-family: "montserrat", sans-serif;
-    transition: 0.5s linear;
-}
-
 .btn-default {
-    width: 7em;
-    text-transform: uppercase;
-    border: .2em solid #5c95c1;
+    border: .2em solid #adbbe3;
     padding: .4em;
-    background-color: #5c95c1;
-    color: white;
-    font-size: 1.4em;
-    border-radius: 1em;
-    margin-top: .2em;
-    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    background-color: #adbbe3;
+    margin-top: 1em;
 }
 
 .btn-default:hover {

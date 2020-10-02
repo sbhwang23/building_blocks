@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
     $.get("/api/user_data").then(data => {
-        $(".member-name").text(data.email);
+        $(".user-name").text(data.username);
     });
 
     $(".image-square-1").on("click", (event) => {

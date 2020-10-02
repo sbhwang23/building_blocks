@@ -1,11 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
   const BucketList = sequelize.define("BucketList", {
-    userId: {
-      type: DataTypes.STRING
-    },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     description: {
       type: DataTypes.STRING
@@ -21,6 +21,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
+
+  BucketList.associate = function(models) {
+    BucketList.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return BucketList;
 
