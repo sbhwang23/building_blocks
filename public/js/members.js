@@ -6,7 +6,10 @@ $(document).ready(() => {
 
     $(".image-square-1").on("click", (event) => {
         event.preventDefault();
-        window.location.replace("/mybucketlist");
+        $.get("/api/user_data").then(data => {
+            const userId = data.id;
+            window.location.replace(`/mybucketlist/${ userId }`);
+        });
     });
 
     $(".image-square-2").on("click", (event) => {
