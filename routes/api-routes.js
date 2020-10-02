@@ -45,19 +45,19 @@ module.exports = function (app) {
     }
   });
 
-  app.post("/api/users", (req, res) => {
-    db.User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(() => {
-        res.redirect(307, "/");
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      });
-  });
+  // app.post("/api/users", (req, res) => {
+  //   db.User.create({
+  //     username: req.body.username,
+  //     email: req.body.email,
+  //     password: req.body.password
+  //   })
+  //     .then(() => {
+  //       res.redirect(307, "/");
+  //     })
+  //     .catch(err => {
+  //       res.status(401).json(err);
+  //     });
+  // });
 
   // app.get("/api/users", (req, res) => {
   //   db.User.findAll({})
@@ -87,16 +87,16 @@ module.exports = function (app) {
   });
 
   app.post("/api/bucket-list", (req, res) => {
-    console.log(req.body);
     db.BucketList.create({
-      userId: req.body.userId,
       title: req.body.title,
       description: req.body.description,
       category: req.body.category,
       collaborators: req.body.collaborators,
+      UserId: req.body.userId
     })
-      .then((listItem) => {
-        res.json(listItem);
+      .then(() => {
+        // res.redirect("/member");
+        res.end();
       })
       .catch(err => {
         res.status(401).json(err);

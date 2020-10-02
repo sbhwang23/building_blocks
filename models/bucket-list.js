@@ -2,10 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   const BucketList = sequelize.define("BucketList", {
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     },
     description: {
       type: DataTypes.STRING
