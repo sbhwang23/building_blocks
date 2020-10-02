@@ -8,7 +8,7 @@ module.exports = function (app) {
     res.json({
       // username: req.user.username,
       email: req.user.email,
-      id: req.user.id
+      password: req.user.password
     });
   });
 
