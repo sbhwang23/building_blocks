@@ -24,7 +24,7 @@ $(function() {
                 $("input[name='collaborators']:checked").val("");
                 $("#location").val("");
                 console.log("...working?")
-                window.location.replace("/mybucketlist");
+                window.location.replace(`/mybucketlist/${ userId }`);
             });
             
         });
