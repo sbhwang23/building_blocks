@@ -175,7 +175,8 @@
     }
     /*Words*/
     
-    h1 {
+    h1,
+    #hidden-logo {
         font-size: 3rem;
         padding: .3em;
         font-family: 'Beth Ellen', cursive;
