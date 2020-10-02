@@ -38,7 +38,6 @@ module.exports = function(app) {
     app.get("/mybucketlist/:id", (req, res) => {
 
         const userId = req.params.id;
-        console.log(userId);
 
         db.BucketList.findAll({
             raw: true,

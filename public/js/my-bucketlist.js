@@ -7,10 +7,8 @@
 //         console.log("suckah")
 //     }
   
-// $(document).ready(() => {
-//     $.get("/api/user_data").then(data => {
-//         const userId = data.id;
-
-//         $.get(`/mybucketlist/${ userId }`).then()
-//     });
-// });
+$(document).ready(() => {
+    $.get("/api/user_data").then(data => {
+        $(".user-name").text(`${data.username}'s Bucket List`);
+    });
+});
