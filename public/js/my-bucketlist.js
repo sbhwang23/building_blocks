@@ -7,6 +7,10 @@
 //         console.log("suckah")
 //     }
   
-$(document).ready(() => {
-    
-});
+// $(document).ready(() => {
+//     $.get("/api/user_data").then(data => {
+//         const userId = data.id;
+
+//         $.get(`/mybucketlist/${ userId }`).then()
+//     });
+// });

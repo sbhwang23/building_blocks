@@ -1,4 +1,5 @@
 const path = require("path");
+const db = require("../models");
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -26,11 +27,28 @@ module.exports = function(app) {
             style: "map.css"
         });
     });
-    app.get("/mybucketlist", (req, res) => {
-        res.render("mybucketlist", {
-            style: "style.css"
+    app.get("/mybucketlist/:id", (req, res) => {
+        
+        const userId = req.params.id;
+        console.log(userId);
+
+        db.BucketList.findAll({
+            raw: true,
+            where: {
+                UserId: userId
+            }
+        }).then((results) => {
+            res.render("mybucketlist", {
+                style: "style.css",
+                bucketListItems: results
+            });
         });
+
+        // res.render("mybucketlist", {
+        //     style: "style.css"
+        // });
     });
+
     app.get("/newactivity", (req, res) => {
         res.render("new-activity", {
             style: "style.css"
