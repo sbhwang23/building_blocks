@@ -57,14 +57,14 @@ section {
     grid-row: span 1;
     align-items: flex-end;
     height: 60%;
-    background-color: rgb(145 228 254);
+    background-color: rgb(179, 244, 97, .6);
     margin: 1.8em 0em;
 }
 
 .slogan-container {
     width: 100%;
-    height: 95%;
-    background-color: rgb(255 255 255);
+    height: 100%;
+    background-color: rgb(179 244 97 / 46%);
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -130,19 +130,27 @@ section {
     -moz-box-shadow: -3px -3px 5px 0px rgba(0, 41, 158, 0.3);
 }
 
+.header-grid-container {
+    width: 80%;
+}
+
 
 /*WORDS*/
 
+h1 {
+    text-shadow: 1px 1px #91e4fe, 1.5px 1.5px #91e4fe, 2px 2px #91e4fe;
+}
+
 #slogan {
-    padding: 1em;
     font-weight: 400;
     font-style: italic;
+    color: #68a1d3;
     font-size: 1.6rem;
     padding: 2em 1em 1em 1em;
 }
 
 .my-list {
-    color: rgba(91, 150, 193, 1);
+    color: #5c95c1;
     padding: .8em;
 }
 
@@ -164,6 +172,12 @@ section {
 .map {
     color: rgba(255, 255, 255, 1);
     padding: .8em;
+}
+
+.welcome {
+    color: #ffffff;
+    font-size: 5rem;
+    text-shadow: 1px 1px rgba(145, 228, 254, 1), 2px 2px rgba(145, 228, 254, 1), 3px 3px rgba(145, 228, 254, 1);
 }
 
 

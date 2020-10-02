@@ -9,9 +9,22 @@ header {
     height: 40%;
 }
 
+.grid-container-1 {
+    background-color: aliceblue;
+}
+
+.grid-container-2 {
+    background-color: aliceblue;
+}
+
+.grid-container-3 {
+    background-color: aliceblue;
+}
+
 .container {
-    align-items: center;
-    height: 60%
+    align-items: flex-start;
+    height: 60%;
+    background-color: aliceblue;
 }
 
 .header-grid-container {
@@ -23,10 +36,10 @@ header {
 .mini-grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr, 1fr, 1fr;
-    grid-gap: 1.3em;
-    height: 80%;
-    width: 80%;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    max-width: 50em;
 }
 
 .grid-1 {
@@ -44,13 +57,6 @@ header {
     justify-content: center;
 }
 
-.grid-2 {
-    grid-row: span 1;
-    grid-column: span 1;
-    height: 100%;
-    width: 100%;
-}
-
 .loginForm {
     display: flex;
     align-items: center;
@@ -66,40 +72,52 @@ header {
 
 input {
     margin-top: 0em;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+    border: .2em solid #f3faff;
 }
 
 
 /*BUTTONS*/
 
 .btn-default {
-    margin-top: .8em;
+    margin-top: 1em;
+    border: .2em solid #9fb7e3;
+    padding: .5em;
+    color: #333;
+    width: 8em;
+    font-size: 1.2rem;
+    background-color: #e7f0fe;
 }
 
 .btn-join {
-    font-size: 1.8em;
-    padding: 1em 0em;
-    border-top: .5em solid #71b3d4;
-    border-bottom: .5em solid #2d3672;
+    font-size: 3em;
+    padding: .2em 0em;
+    border-top: .2em solid #acbae3;
+    border-bottom: .2em solid #acbae3;
+    color: #ffffff;
 }
 
 .btn-join:hover {
     cursor: pointer;
-    color: #222260;
-    font-size: 3.0em;
-    border-bottom-color: #63a0c8;
-    border-top-color: #5384a0;
+    font-size: 5em;
     padding: .5em 3em;
+    background-repeat: no-repeat;
+    background-image: url(images/icons/falling-asteroid.svg);
+    background-position-y: center;
+    background-position-x: center;
+    height: 100%;
+    width: 100%;
 }
 
 
 /*IMAGES*/
 
 .circle-1 {
-    height: 25em;
-    width: 25em;
-    background-color: rgba(92, 149, 193, 1);
+    height: 100%;
+    width: 100%;
+    background-color: rgb(156 230 254 / 77%);
     border-radius: 50% 50%;
+    border-top: 1em solid white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,19 +127,25 @@ input {
 }
 
 .circle-2 {
-    height: 20em;
-    width: 20em;
-    background-color: rgba(92, 149, 193, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25em;
+    width: 25em;
+    background-color: rgb(92 149 193 / 52%);
     border-radius: 126px;
     background: linear-gradient(225deg, #83cde5, #5c95c1);
-    box-shadow: -24px 24px 0px #3a5b66, 24px -24px 0px #e8ffff;
+    box-shadow: -20px 11px 4px 0px #98b4e3, 24px -24px 16px #e8ffff;
 }
 
-.comet {
-    background-repeat: no-repeat;
-    background-image: url(images/icons/falling-asteroid.svg);
-    background-position-y: center;
-    background-position-x: center;
-    height: 100%;
-    width: 100%;
+
+/*WORDS*/
+
+h1 {
+    text-shadow: none;
+}
+
+.welcome {
+    color: #333;
+    text-shadow: 0.5px 0.5px rgba(145, 228, 254, 1), 1px 1px rgba(145, 228, 254, 1), 1.5px 1.5px rgba(145, 228, 254, 1);
 }
