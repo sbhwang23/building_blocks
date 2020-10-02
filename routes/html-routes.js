@@ -2,10 +2,10 @@ const path = require("path");
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function (app) {
+module.exports = function(app) {
     //LANDING HOME PAGE where user can login OR JOIN
     app.get("/", (req, res) => {
-        res.render("loginpage", { 
+        res.render("loginpage", {
             style: "login.css"
         });
     });
@@ -16,11 +16,11 @@ module.exports = function (app) {
         });
     });
     app.get("/member", //isAuthenticated,
-     (req, res) => {
-        res.render("member", {
-            style: "style.css"
+        (req, res) => {
+            res.render("member", {
+                style: "member.css"
+            });
         });
-    });
     app.get("/map", (req, res) => {
         res.render("maps", {
             style: "map.css"
@@ -32,7 +32,7 @@ module.exports = function (app) {
         });
     });
     app.get("/newactivity", (req, res) => {
-        res.render("new-activity", { 
+        res.render("new-activity", {
             style: "style.css"
         });
     });

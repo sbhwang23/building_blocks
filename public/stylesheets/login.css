@@ -1,25 +1,47 @@
-/* .wrapper {} */
-
-.container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 70%;
-    width: 100%;
-    background-color: #91e4fe;
-    border-top: 10em solid #bcd1d9;
+:root {
+    background-color: (240, 248, 255, 100%);
+    background-image: url("images/galaxy.jpg");
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(240, 248, 255, 70%);
+}
 
-/*GRID*/
+header {
+    height: 40%;
+}
+
+.container {
+    align-items: flex-start;
+    height: 60%;
+}
+
+.header-grid-container {
+    width: 100%;
+    grid-column-gap: 2em;
+    grid-template-rows: auto;
+}
+
+.logo-container {
+    background-color: rgba(0 41 158 / 42%);
+}
 
 .mini-grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr, 1fr, 1fr;
-    grid-gap: 1.3em;
-    height: 80%;
-    width: 80%;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    max-width: 50em;
+}
+
+.grid-container-3 {
+    grid-row: span 2;
+    grid-column: span 1;
 }
 
 .grid-1 {
@@ -37,13 +59,6 @@
     justify-content: center;
 }
 
-.grid-2 {
-    grid-row: span 1;
-    grid-column: span 1;
-    height: 100%;
-    width: 100%;
-}
-
 .loginForm {
     display: flex;
     align-items: center;
@@ -58,66 +73,53 @@
 }
 
 input {
-    padding: .6em;
-    margin-bottom: .5em;
-    border: .1em solid #5c95c1;
-}
-
-.join {
-    position: relative;
-    bottom: 8.5em;
+    margin-top: .4em;
+    margin-bottom: 1em;
+    border: .2em solid #e7f0fe;
+    background-color: #e7f0fe;
 }
 
 
 /*BUTTONS*/
 
-.btn {
-    text-decoration: none;
-    font-family: "montserrat", sans-serif;
-    transition: 0.5s linear;
-}
-
 .btn-default {
-    width: 7em;
-    text-transform: uppercase;
-    border: .2em solid #5c95c1;
-    padding: .2em;
-    background-color: white;
-    font-size: 1.4em;
-    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-}
-
-.btn-default:hover {
-    cursor: pointer;
-    font-size: 1.8em;
+    margin-top: .2em;
+    border: .2em solid #7b89bd;
+    padding: .5em;
+    color: #e7f0fe;
+    width: 8em;
+    font-size: 1.2rem;
+    background-color: transparent;
 }
 
 .btn-join {
-    width: 7em;
-    font-size: 1.8em;
-    padding: 1em 0em;
-    border-top: .5em solid #ffffff;
-    border-bottom: .5em solid #5c95c1;
+    font-size: 3.5em;
+    padding: .2em 0em;
+    border-top: .2em solid #97b4e3;
+    border-bottom: .2em solid #acbae3;
+    color: #e7f0fe;
 }
 
 .btn-join:hover {
     cursor: pointer;
-    color: #ceff70;
-    font-size: 2.0em;
-    border-bottom-color: #ffffff;
-    border-top-color: #5c95c1;
+    font-size: 5em;
+    padding: .5em 3em;
+    background-repeat: no-repeat;
+    background-image: url(images/icons/falling-asteroid.svg);
+    background-position-y: center;
+    background-position-x: center;
+    height: 100%;
+    width: 100%;
 }
 
 
 /*IMAGES*/
 
 .circle-1 {
-    height: 25em;
-    width: 25em;
-    background-color: rgba(145, 228, 254, 1);
-    border-radius: 50% 50%;
+    height: 80%;
+    width: 80%;
+    background-color: rgb(231 240 254);
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,19 +129,22 @@ input {
 }
 
 .circle-2 {
-    height: 20em;
-    width: 20em;
-    background-color: rgba(145, 228, 254, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25em;
+    width: 25em;
+    background-color: rgb(92 149 193 / 52%);
     border-radius: 126px;
-    background: linear-gradient(225deg, #83cde5, #9bf4ff);
-    box-shadow: -24px 24px 0px #3a5b66, 24px -24px 0px #e8ffff;
+    background: linear-gradient(225deg, #4c5da0, #d6ddee);
+    box-shadow: -20px 11px 4px 0px #697ab7, 24px -24px 16px #ffffff;
 }
 
-.comet {
-    background-repeat: no-repeat;
-    background-image: url(images/icons/falling-asteroid.svg);
-    background-position-y: center;
-    background-position-x: center;
-    height: 100%;
-    width: 100%;
+
+/*WORDS*/
+
+h1 {
+    text-shadow: 1px 1px #6678b4, 1.5px 1.5px #6678b4, 2px 2px #6678b4;
+    font-size: 4rem;
+    padding: none;
 }
