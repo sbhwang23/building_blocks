@@ -28,12 +28,12 @@ module.exports = function(app) {
     });
     app.get("/mybucketlist", (req, res) => {
         res.render("mybucketlist", {
-            style: "style.css"
+            style: "mylist.css"
         });
     });
     app.get("/newactivity", (req, res) => {
         res.render("new-activity", {
-            style: "style.css"
+            style: "newactivity.css"
         });
     });
     app.get("/search", (req, res) => {

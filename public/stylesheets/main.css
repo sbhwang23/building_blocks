@@ -12,6 +12,10 @@
     body {
         margin: 0 auto;
         min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     
      :root {
@@ -20,6 +24,7 @@
     }
     
     .wrapper {
+        width: 100%;
         margin: 0em auto;
         height: 100vh;
         background-color: rgba(240, 248, 255, .5);
