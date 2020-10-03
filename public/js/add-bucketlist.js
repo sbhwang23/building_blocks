@@ -159,6 +159,7 @@ submitButton.onclick = function(e) {
                 categoryInputOther.checked = false;
                 collaboratorsInputTrue.checked = false;
                 collaboratorsInputFalse.checked = false;
+                window.location.replace(`/mybucketlist/${userId}`);
             })
             .catch(err => console.log(err));
         });
