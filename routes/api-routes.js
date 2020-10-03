@@ -96,7 +96,7 @@ module.exports = function (app) {
     })
       .then(() => {
         // res.redirect("/member");
-        res.end();
+        res.json();
       })
       .catch(err => {
         res.status(401).json(err);
