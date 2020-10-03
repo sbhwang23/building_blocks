@@ -8,7 +8,7 @@ $(document).ready(() => {
         event.preventDefault();
         $.get("/api/user_data").then(data => {
             const userId = data.id;
-            window.location.replace(`/mybucketlist/${ userId }`);
+            window.location.replace(`/mybucketlist/${userId}`);
         });
     });
 

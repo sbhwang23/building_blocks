@@ -3,7 +3,7 @@ const db = require("../models");
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function(app) {
+module.exports = function (app) {
     //LANDING HOME PAGE where user can login OR JOIN
     app.get("/", (req, res) => {
         if (req.isAuthenticated()) {
