@@ -3,6 +3,9 @@ CREATE DATABASE userData;
 
 USE userData;
 
-DROP TABLE IF EXISTS BucketList;
+DROP TABLE IF EXISTS BucketLists;
 
 DROP TABLE IF EXISTS Users;
+
+SELECT * FROM BucketLists;
+SELECT * FROM Users;
