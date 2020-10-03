@@ -105,3 +105,11 @@ input {
 .hide {
     display: none;
 }
+
+/*MAP*/
+
+#map {
+    display: flex;
+    height: 300px;
+    width: 300px;
+}
