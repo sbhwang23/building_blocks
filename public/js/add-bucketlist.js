@@ -150,7 +150,6 @@ submitButton.onclick = function(e) {
             })
             .then(response => console.log(response)) 
             .then(() => {
-                // console.log(json);
                 titleInput.value = "";
                 descriptionInput.value = "";
                 categoryInputAdventure.checked = false;
