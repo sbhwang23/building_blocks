@@ -8,7 +8,12 @@
                     <div class="circle">
                         <div class="map-box-container">
                             <div class="map-box">
-                                <div id="map"></div>
+                                <div id="mainMap"></div>
+                                <div class="info-windows">
+                                    {{#each mapPoints}}
+                                        {{>info-window}}
+                                    {{/each}}
+                                </div>
                             </div>
                         </div>
                     </div>

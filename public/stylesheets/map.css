@@ -108,8 +108,15 @@ input {
 
 /*MAP*/
 
-#map {
-    display: flex;
-    height: 300px;
-    width: 300px;
+#mainMap {
+    height: 500px;
+    width: 500px;
+}
+
+.infowindow-content {
+    display: none;
+}
+
+#mainMap .infowindow-content {
+    display: inline;
 }

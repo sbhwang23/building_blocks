@@ -1,8 +1,8 @@
-let map;
+let newActivityMap;
 let selectedLocation;
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
+    newActivityMap = new google.maps.Map(document.getElementById("newActivityMap"), {
         center: { lat: 0, lng: 0 },
         zoom: 2,
         mapTypeControl: false
@@ -16,8 +16,8 @@ function initMap() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
             };
-            map.setCenter(pos);
-            map.setZoom(6);
+            newActivityMap.setCenter(pos);
+            newActivityMap.setZoom(6);
         });
     };
 
@@ -27,14 +27,14 @@ function initMap() {
     // so that the autocomplete requests use the current map bounds for the
     // bounds option in the request.
 
-    autocomplete.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
+    autocomplete.bindTo("bounds", newActivityMap); // Set the data fields to return when the user selects a place.
 
     autocomplete.setFields(["address_components", "geometry", "icon", "name", "place_id"]);
     const infowindow = new google.maps.InfoWindow();
     const infowindowContent = document.getElementById("infowindow-content");
     infowindow.setContent(infowindowContent);
     const marker = new google.maps.Marker({
-        map,
+        newActivityMap,
         anchorPoint: new google.maps.Point(0, -29),
     });
     autocomplete.addListener("place_changed", () => {
@@ -52,10 +52,10 @@ function initMap() {
         } // If the place has a geometry, then present it on a map.
 
         if (place.geometry.viewport) {
-        map.fitBounds(place.geometry.viewport);
+        newActivityMap.fitBounds(place.geometry.viewport);
         } else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(17); // Why 17? Because it looks good.
+        newActivityMap.setCenter(place.geometry.location);
+        newActivityMap.setZoom(17); // Why 17? Because it looks good.
         }
         
         marker.setPosition(place.geometry.location);
@@ -79,7 +79,7 @@ function initMap() {
         infowindowContent.children["place-icon"].src = place.icon;
         infowindowContent.children["place-name"].textContent = place.name;
         infowindowContent.children["place-address"].textContent = address;
-        infowindow.open(map, marker);
+        infowindow.open(newActivityMap, marker);
     });
 };
 
