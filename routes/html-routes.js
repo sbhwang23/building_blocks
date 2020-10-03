@@ -1,5 +1,7 @@
 const path = require("path");
 const db = require("../models");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -28,12 +30,23 @@ module.exports = function (app) {
                 style: "member.css"
             });
         });
-    app.get("/map", isAuthenticated,
-        (req, res) => {
+    app.get("/map", isAuthenticated, (req, res) => {
+        db.BucketList.findAll({
+            raw: true,
+            where: {
+                location: {
+                    [Op.ne]: null
+                }
+            }
+        }).then((results) => {
+            console.log(results);
             res.render("maps", {
-                style: "map.css"
+                style: "map.css",
+                mapPoints: results
             });
-        });
+        })
+            
+    });
 
     app.get("/mybucketlist/:id", (req, res) => {
 
@@ -50,10 +63,6 @@ module.exports = function (app) {
                 bucketListItems: results
             });
         });
-
-        // res.render("mybucketlist", {
-        //     style: "style.css"
-        // });
     });
 
     app.get("/newactivity", (req, res) => {

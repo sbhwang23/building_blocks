@@ -83,7 +83,7 @@ input {
 
 /*MAP*/
 
-#map {
+#newActivityMap {
     display: none;
     height: 200px;
     width: 300px;
