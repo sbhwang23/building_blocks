@@ -5,7 +5,7 @@ const searchButton = document.querySelector('.new-idea');
 const listButton = document.querySelector('.list');
 const doOverButton = document.querySelector('.tryAgain');
 const closeButton = document.querySelector('.close-button')
-    //DIVS TO TOGGLE HIDE ON/OFF
+//DIVS TO TOGGLE HIDE ON/OFF
 const beforeSearch = document.querySelector('.start-search');
 const afterSearch = document.querySelector('.search-results');
 
@@ -14,23 +14,23 @@ const newActivity = [];
 
 //Click Events
 
-searchButton.onclick = function(e) {
+searchButton.onclick = function (e) {
     e.preventDefault();
     hideNSeek();
     newSearch();
 }
 
-closeButton.onclick = function() {
+closeButton.onclick = function () {
     hideNSeek();
     ideaText.innerHTML = ""
 }
 
-doOverButton.onclick = function(e) {
+doOverButton.onclick = function (e) {
     e.preventDefault();
     newSearch();
 }
 
-listButton.onclick = function() {
+listButton.onclick = function () {
     const x = ideaText.innerHTML;
     newActivity.push(x);
     window.location.href = '/newactivity'

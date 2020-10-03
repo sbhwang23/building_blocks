@@ -7,7 +7,6 @@ $(document).ready(() => {
 
     loginForm.on("submit", event => {
         event.preventDefault();
-        console.log('submitted')
         const userData = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
@@ -24,9 +23,9 @@ $(document).ready(() => {
 
     function loginUser(email, password) {
         $.post("/api/login", {
-                email: email,
-                password: password
-            })
+            email: email,
+            password: password
+        })
             .then(() => {
                 window.location.replace("/member");
                 // If there's an error, log the error
@@ -35,18 +34,4 @@ $(document).ready(() => {
                 console.log(err);
             });
     };
-
-    // function loginUser(email, password) {
-    //     console.log("posting")
-    //     $.get("/member", {
-    //         email: email,
-    //         password: password
-    //     })
-    //         .then(() => {
-    //             window.location.replace("/member");
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         });
-    // }
 });
