@@ -22,11 +22,7 @@ function initMap() {
     fetch("/api/bucket-list")
     .then((response) => response.json())
     .then((listData) => {
-        console.log(listData);
-
         for (let i = 0; i < listData.length; i++) {
-            console.log(listData[i].location);
-            console.log(listData[i].id);
             if (listData[i].location) {
                 const request = {
                     placeId: listData[i].location,
@@ -35,17 +31,18 @@ function initMap() {
                 const infowindow = new google.maps.InfoWindow();
                 const infowindowContent = document.getElementById(`infowindow-${listData[i].id}`);
                 infowindow.setContent(infowindowContent);
-                const service = new google.maps.places.PlacesService(map);
+                const service = new google.maps.places.PlacesService(mainMap);
                 service.getDetails(request, (place, status) => {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         const marker = new google.maps.Marker({
-                            mainMap,
+                            map: mainMap,
                             position: place.geometry.location,
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindowContent.children.namedItem(`place-name-${listData[i].id}`).textContent = place.name;
-                            infowindow.open(map, this);
+                            infowindow.open(mainMap, this);
                         });
+                        marker.setVisible(true);
                     }
                 });
             }
