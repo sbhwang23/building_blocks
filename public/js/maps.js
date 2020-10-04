@@ -23,10 +23,10 @@ function initMap() {
     .then((response) => response.json())
     .then((listData) => {
         for (let i = 0; i < listData.length; i++) {
-            if (listData[i].location) {
+            if (listData[i].location_id) {
                 const request = {
-                    placeId: listData[i].location,
-                    fields: ["name", "geometry"]
+                    placeId: listData[i].location_id,
+                    fields: ["geometry"]
                 };
                 const infowindow = new google.maps.InfoWindow();
                 const infowindowContent = document.getElementById(`infowindow-${listData[i].id}`);
@@ -39,7 +39,6 @@ function initMap() {
                             position: place.geometry.location,
                         });
                         google.maps.event.addListener(marker, "click", function () {
-                            infowindowContent.children.namedItem(`place-name-${listData[i].id}`).textContent = place.name;
                             infowindow.open(mainMap, this);
                         });
                         marker.setVisible(true);

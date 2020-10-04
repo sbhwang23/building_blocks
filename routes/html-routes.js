@@ -33,13 +33,8 @@ module.exports = function (app) {
     app.get("/map", isAuthenticated, (req, res) => {
         db.BucketList.findAll({
             raw: true,
-            where: {
-                location: {
-                    [Op.ne]: null
-                }
-            }
+            include: [db.User]
         }).then((results) => {
-            console.log(results);
             res.render("maps", {
                 style: "map.css",
                 mapPoints: results
@@ -52,17 +47,35 @@ module.exports = function (app) {
 
         const userId = req.params.id;
 
-        db.BucketList.findAll({
+        db.User.findAll({
             raw: true,
             where: {
-                UserId: userId
-            }
+                id: userId
+            },
+            include: [db.BucketList]
         }).then((results) => {
+            console.log(results);
             res.render("mybucketlist", {
                 style: "style.css",
                 bucketListItems: results
-            });
+             });
         });
+
+            // db.BucketList.findAll({
+            //     raw: true,
+            //     where: {
+            //         UserId: userId
+            //     },
+            //     include: [db.User]
+            // }).then((results) => {
+            //     console.log(results);
+            //     console.log(results[0].UserId);
+            //     // console.log(results[0].User.username);
+            //     res.render("mybucketlist", {
+            //         style: "style.css",
+            //         bucketListItems: results
+            //     });
+            // });
     });
 
     app.get("/newactivity", (req, res) => {

@@ -41,7 +41,8 @@ function initMap() {
         infowindow.close();
         marker.setVisible(false);
         const place = autocomplete.getPlace();
-        selectedLocation = place.place_id;
+        selectedLocation_id = place.place_id;
+        selectedLocation_name = place.name;
 
         if (!place.geometry) {
         // User entered the name of a Place that was not suggested and
@@ -135,19 +136,17 @@ submitButton.onclick = function(e) {
             description: descriptionInput.value,
             category: selectedCategory,
             collaborators: selectedCollaborators,
-            location: selectedLocation,
+            location_id: selectedLocation_id,
+            location_name: selectedLocation_name,
             userId: userId
         };
-
-        console.log(newActivity);
-        console.log(JSON.stringify(newActivity));
 
         fetch("/api/bucket-list", {
             method: "POST",
             body: JSON.stringify(newActivity),
             headers: {"Content-type": "application/json; charset=UTF-8"}
             })
-            .then(response => console.log(response)) 
+            .then(response => response.json()) 
             .then(() => {
                 titleInput.value = "";
                 descriptionInput.value = "";

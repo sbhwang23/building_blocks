@@ -14,7 +14,10 @@ module.exports = function (sequelize, DataTypes) {
     collaborators: {
       type: DataTypes.BOOLEAN
     },
-    location: {
+    location_id: {
+      type: DataTypes.STRING
+    },
+    location_name: {
       type: DataTypes.STRING
     }
   });
