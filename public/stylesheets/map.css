@@ -49,9 +49,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr, 1fr;
-    grid-gap: 4em;
-    height: 80%;
-    margin-top: 2em;
 }
 
 .grid {
@@ -62,7 +59,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    background-color: rgba(0 131 255 / 29%);
+    background-color: rgb(240 248 255)
 }
 
 
