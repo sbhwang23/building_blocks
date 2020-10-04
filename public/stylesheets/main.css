@@ -2,7 +2,7 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        color: #333;
+        color: rgb(51 51 51);
         text-align: center;
         text-size-adjust: auto;
         overflow-wrap: break-word;
@@ -110,7 +110,7 @@
         justify-content: center;
         align-items: flex-end;
         font-size: 3.2rem;
-        text-shadow: -8px 3px 20px #b2bde3;
+        text-shadow: -8px 3px 20px rgb(178 189 227);
     }
     
     .logo-container {
@@ -133,7 +133,7 @@
         justify-content: center;
         grid-column: span 1;
         grid-row: span 2;
-        background-color: aliceblue;
+        background-color: rgb(240 248 255);
         padding: 3em;
         border-radius: 1em;
     }
@@ -149,13 +149,13 @@
     .nav-link {
         padding: .3em 0em;
         font-size: 1.2rem;
-        color: #333;
+        color: rgb(51 51 51);
         text-decoration: none;
     }
     
     input {
         padding: .6em;
-        border: .2em solid #5c95c1;
+        border: .2em solid rgb(92 149 193);
         margin-top: 1em;
         box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
         -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -164,14 +164,14 @@
     }
     
     a {
-        color: #5c95c1;
-        transition: 0.4s linear;
+        color: rgb(92 149 193);
+        transition: 0.2s ease;
         font-family: 'Montserrat', sans-serif;
     }
     
     a:hover {
         cursor: pointer;
-        font-size: 2.8rem;
+        font-size: 2rem;
     }
     /*Words*/
     
@@ -180,8 +180,8 @@
         font-size: 3rem;
         padding: .3em;
         font-family: 'Beth Ellen', cursive;
-        color: #ffffff;
-        text-shadow: 1px 1px #222260, 1.5px 1.5px #222260, 2px 2px #222260;
+        color: rgb(255 255 255);
+        text-shadow: 1px 1px rgb(34 34 96), 1.5px 1.5px rgb(34 34 96), 2px 2px rgb(34 34 96);
     }
     
     h2 {
@@ -207,22 +207,22 @@
     .btn {
         text-decoration: none;
         font-family: "montserrat", sans-serif;
-        transition: 0.5s linear;
+        transition: 0.2s linear;
     }
     
     .btn-default:hover {
         cursor: pointer;
-        font-size: 1.8em;
+        font-size: 1.4rem;
     }
     
     .btn-default {
         width: 7em;
         text-transform: uppercase;
-        border: .2em solid #5c95c1;
+        border: .2em solid rgb(92 149 193);
         padding: .4em;
-        background-color: #5c95c1;
-        color: white;
-        font-size: 1.4em;
+        background-color: rgb(92 149 193);
+        color: rgb(255 255 255);
+        font-size: 1.4rem;
         border-radius: 1em;
         margin-top: .2em;
         box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
