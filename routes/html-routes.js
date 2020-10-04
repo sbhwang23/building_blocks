@@ -45,7 +45,7 @@ module.exports = function (app) {
                 mapPoints: results
             });
         })
-            
+
     });
 
     app.get("/mybucketlist/:id", (req, res) => {
@@ -70,7 +70,7 @@ module.exports = function (app) {
             style: "newactivity.css"
         });
     });
-    app.get("/search", isAuthenticated,
+    app.get("/discover", isAuthenticated,
         (req, res) => {
             res.render("search", {
                 style: "search.css"
