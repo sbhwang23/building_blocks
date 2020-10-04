@@ -11,18 +11,18 @@ function initMap() {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            };
-            newActivityMap.setCenter(pos);
-            newActivityMap.setZoom(6);
-        });
+            (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                newActivityMap.setCenter(pos);
+                newActivityMap.setZoom(6);
+            });
     };
 
     const input = document.getElementById("location");
-    const autocomplete = new google.maps.places.Autocomplete(input); 
+    const autocomplete = new google.maps.places.Autocomplete(input);
     // Bind the map's bounds (viewport) property to the autocomplete object,
     // so that the autocomplete requests use the current map bounds for the
     // bounds option in the request.
@@ -44,35 +44,35 @@ function initMap() {
         selectedLocation = place.place_id;
 
         if (!place.geometry) {
-        // User entered the name of a Place that was not suggested and
-        // pressed the Enter key, or the Place Details request failed.
-        window.alert("No details available for input: '" + place.name + "'");
-        return;
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
         } // If the place has a geometry, then present it on a map.
 
         if (place.geometry.viewport) {
-        newActivityMap.fitBounds(place.geometry.viewport);
+            newActivityMap.fitBounds(place.geometry.viewport);
         } else {
-        newActivityMap.setCenter(place.geometry.location);
-        newActivityMap.setZoom(17); // Why 17? Because it looks good.
+            newActivityMap.setCenter(place.geometry.location);
+            newActivityMap.setZoom(17); // Why 17? Because it looks good.
         }
-        
+
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
         let address = "";
 
         if (place.address_components) {
-        address = [
-            (place.address_components[0] &&
-            place.address_components[0].short_name) ||
-            "",
-            (place.address_components[1] &&
-            place.address_components[1].short_name) ||
-            "",
-            (place.address_components[2] &&
-            place.address_components[2].short_name) ||
-            "",
-        ].join(" ");
+            address = [
+                (place.address_components[0] &&
+                    place.address_components[0].short_name) ||
+                "",
+                (place.address_components[1] &&
+                    place.address_components[1].short_name) ||
+                "",
+                (place.address_components[2] &&
+                    place.address_components[2].short_name) ||
+                "",
+            ].join(" ");
         }
 
         infowindowContent.children["place-icon"].src = place.icon;
@@ -121,45 +121,45 @@ collaboratorsInputFalse.addEventListener("click", () => {
     selectedCollaborators = "false";
 });
 
-submitButton.onclick = function(e) {
-    
+submitButton.onclick = function (e) {
+
     e.preventDefault();
 
     fetch("/api/user_data")
-    .then((response) => response.json())
-    .then((userData) => {
-        const userId = userData.id;
+        .then((response) => response.json())
+        .then((userData) => {
+            const userId = userData.id;
 
-        const newActivity = {
-            title: titleInput.value,
-            description: descriptionInput.value,
-            category: selectedCategory,
-            collaborators: selectedCollaborators,
-            location: selectedLocation,
-            userId: userId
-        };
+            const newActivity = {
+                title: titleInput.value,
+                description: descriptionInput.value,
+                category: selectedCategory,
+                collaborators: selectedCollaborators,
+                location: selectedLocation,
+                userId: userId
+            };
 
-        console.log(newActivity);
-        console.log(JSON.stringify(newActivity));
+            console.log(newActivity);
+            console.log(JSON.stringify(newActivity));
 
-        fetch("/api/bucket-list", {
-            method: "POST",
-            body: JSON.stringify(newActivity),
-            headers: {"Content-type": "application/json; charset=UTF-8"}
+            fetch("/api/bucket-list", {
+                method: "POST",
+                body: JSON.stringify(newActivity),
+                headers: { "Content-type": "application/json; charset=UTF-8" }
             })
-            .then(response => console.log(response)) 
-            .then(() => {
-                titleInput.value = "";
-                descriptionInput.value = "";
-                categoryInputAdventure.checked = false;
-                categoryInputHomebody.checked = false;
-                categoryInputCreate.checked = false;
-                categoryInputTakeAction.checked = false;
-                categoryInputOther.checked = false;
-                collaboratorsInputTrue.checked = false;
-                collaboratorsInputFalse.checked = false;
-                window.location.replace(`/mybucketlist/${userId}`);
-            })
-            .catch(err => console.log(err));
+                .then(response => console.log(response))
+                .then(() => {
+                    titleInput.value = "";
+                    descriptionInput.value = "";
+                    categoryInputAdventure.checked = false;
+                    categoryInputHomebody.checked = false;
+                    categoryInputCreate.checked = false;
+                    categoryInputTakeAction.checked = false;
+                    categoryInputOther.checked = false;
+                    collaboratorsInputTrue.checked = false;
+                    collaboratorsInputFalse.checked = false;
+                    window.location.replace(`/mybucketlist/${userId}`);
+                })
+                .catch(err => console.log(err));
         });
 };
