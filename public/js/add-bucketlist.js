@@ -42,7 +42,6 @@ function initMap() {
         marker.setVisible(false);
         const place = autocomplete.getPlace();
         selectedLocation = place.place_id;
-        console.log(selectedLocation);
 
         if (!place.geometry) {
         // User entered the name of a Place that was not suggested and
