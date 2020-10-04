@@ -1,12 +1,12 @@
 <div class="list-item">
     
-    <h3>{{'BucketLists.title'}}</h3> <button class="deleteBtn" data-id={{'BucketLists.id'}}>x</button>
-    {{#if 'BucketLists.description'}}
-    <p>{{'BucketLists.description'}}</p>
+    <h3>{{title}}</h3> <button class="deleteBtn" data-id={{id}}>x</button>
+    {{#if description}}
+    <p>{{description}}</p>
     {{/if}}
-    <p>category: {{'BucketLists.category'}}</p>
-    <p>location: {{'BucketLists.location_name'}}</p>
-    {{#if 'BucketLists.collaborators'}}
+    <p>category: {{category}}</p>
+    <p>location: {{location_name}}</p>
+    {{#if collaborators}}
     <p>seeking collaborators: yes</p>
     {{else}}
     <p>seeking collaborators: no</p>

@@ -116,10 +116,10 @@ categoryInputOther.addEventListener("click", () => {
 });
 
 collaboratorsInputTrue.addEventListener("click", () => {
-    selectedCollaborators = "true";
+    selectedCollaborators = true;
 });
 collaboratorsInputFalse.addEventListener("click", () => {
-    selectedCollaborators = "false";
+    selectedCollaborators = false;
 });
 
 submitButton.onclick = function(e) {

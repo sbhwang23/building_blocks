@@ -2,10 +2,10 @@
     {{> header }}
     <div class="container">
         <div class="title-container">
-            <h2>{{bucketListItems.0.username}}'s Bucket List</h2>
+            <h2>{{username}}'s Bucket List</h2>
             <div>
                 <div class="list-container">
-                    {{#if (lookup bucketListItems.[0] 'BucketLists.id')}}
+                    {{#if bucketListItems}}
                         <div class="user-list">
                             {{#each bucketListItems}}
                                 {{>listItem}}
@@ -13,7 +13,7 @@
                         </div>
                     {{else}}
                         <div class="user-list">
-                            <h3>Your bucket list is empty</h3>
+                            <h3>There are no items in this bucket list</h3>
                         </div>
                     {{/if}}
                 </div>

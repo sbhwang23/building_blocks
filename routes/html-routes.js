@@ -47,33 +47,31 @@ module.exports = function (app) {
 
         const userId = req.params.id;
 
-        db.User.findAll({
+        db.User.findOne({
             raw: true,
             where: {
                 id: userId
-            },
-            include: [db.BucketList]
-        }).then((results) => {
-            res.render("mybucketlist", {
-                style: "style.css",
-                bucketListItems: results
-             });
+            }
+        }).then((userData) => {
+            const username = userData.username;
+
+            db.BucketList.findAll({
+                raw: true,
+                where: {
+                    UserId: userId
+                },
+                include: [db.User]
+            }).then((results) => {
+                res.render("mybucketlist", {
+                    style: "style.css",
+                    username: username,
+                    bucketListItems: results
+                });
+            });
+
         });
 
-            // db.BucketList.findAll({
-            //     raw: true,
-            //     where: {
-            //         UserId: userId
-            //     },
-            //     include: [db.User]
-            // }).then((results) => {
-            //     console.log(results);
-            //     // console.log(results[0].User.username);
-            //     res.render("mybucketlist", {
-            //         style: "style.css",
-            //         bucketListItems: results
-            //     });
-            // });
+            
     });
 
     app.get("/newactivity", (req, res) => {
