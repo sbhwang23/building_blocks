@@ -19,7 +19,8 @@
 }
 
 .selector-container {
-    background-color: aliceblue;
+    background-color: rgb(240 248 255);
+    margin: 1em 0em 2em 0em;
 }
 
 
@@ -28,11 +29,11 @@
 .create-form {
     display: grid;
     grid-template-columns: 1fr, 1fr;
-    grid-gap: .5em;
+    grid-row-gap: 2.8em;
 }
 
 .grid {
-    grid-column: span-1;
+    grid-column: span 1;
     grid-row: span 1;
 }
 
@@ -40,7 +41,7 @@
 /*WORDS*/
 
 h1 {
-    text-shadow: 1px 1px #afbbe3, 1.5px 1.5px #aebbe3, 2px 2px #acbce3;
+    text-shadow: 1px 1px rgb(175 187 227), 1.5px 1.5px rgb(175 187 227), 2px 2px rgb(175 187 227);
 }
 
 h2 {
@@ -59,17 +60,13 @@ form {
 }
 
 #description {
-    border: .2em solid #ffffff;
-    background-color: #ffffff;
-    box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
-    -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
+    border: .2em solid rgb(255 255 255);
+    background-color: rgb(255 255 255);
+    box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
+    -webkit-box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
+    -moz-box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
     border-radius: 1rem;
-    margin-top: .4em;
-}
-
-.bubbles {
-    margin: .8em 0em .8em .8em;
+    margin-top: .8em;
 }
 
 label {
@@ -78,8 +75,17 @@ label {
 }
 
 input {
-    border: .2em solid #a8bae3;
+    border: .2em solid rgb(168 186 227);
+    box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
+    -webkit-box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
+    -moz-box-shadow: -1px 5px 0px 0px rgb(0 41 158 / .3);
 }
+
+.bubbles {
+    margin: .8em 0em .8em .8em;
+    box-shadow: none;
+}
+
 
 /*MAP*/
 
