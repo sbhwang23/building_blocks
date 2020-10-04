@@ -9,14 +9,14 @@ function initMap() {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            };
-            mainMap.setCenter(pos);
-            mainMap.setZoom(3);
-        });
+            (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                mainMap.setCenter(pos);
+                mainMap.setZoom(3);
+            });
     };
 
     fetch("/api/bucket-list")
@@ -47,4 +47,4 @@ function initMap() {
             }
         }
     });
-}
+};
