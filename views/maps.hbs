@@ -8,17 +8,15 @@
                     <div class="circle">
                         <div class="map-box-container">
                             <div class="map-box">
-                                <div id="map"></div>
+                                <div id="mainMap"></div>
+                                <div class="info-windows">
+                                    {{#each mapPoints}}
+                                    {{>info-window}}
+                                    {{/each}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="grid grid-2">
-                <div class="search-container">
-                    <h3>ZIPCODE</h3>
-                    <input type="text" placeholder="43210">
-                    <button class="btn btn-default">FIND</button>
                 </div>
             </div>
         </div>

@@ -1,23 +1,23 @@
 //TEXT
 const ideaText = document.querySelector('.idea');
 //BUTTONS
-const searchButton = document.querySelector('.new-idea');
+const discoverButton = document.querySelector('.new-idea');
 const listButton = document.querySelector('.list');
 const doOverButton = document.querySelector('.tryAgain');
 const closeButton = document.querySelector('.close-button')
 //DIVS TO TOGGLE HIDE ON/OFF
-const beforeSearch = document.querySelector('.start-search');
-const afterSearch = document.querySelector('.search-results');
+const beforeDiscover = document.querySelector('.start-discover');
+const afterDiscover = document.querySelector('.discover-results');
 
 const newIdeas = ["Eat a muffin", "Wash your hands you dirty bird"];
 const newActivity = [];
 
 //Click Events
 
-searchButton.onclick = function (e) {
+discoverButton.onclick = function (e) {
     e.preventDefault();
     hideNSeek();
-    newSearch();
+    newDiscover();
 }
 
 closeButton.onclick = function () {
@@ -27,7 +27,7 @@ closeButton.onclick = function () {
 
 doOverButton.onclick = function (e) {
     e.preventDefault();
-    newSearch();
+    newDiscover();
 }
 
 listButton.onclick = function () {
@@ -38,13 +38,13 @@ listButton.onclick = function () {
 
 // hiding showing divs on initial search
 function hideNSeek() {
-    $('.start-search').toggleClass('hidden');
-    $('.search-results').toggleClass('hidden');
+    $('.start-discover').toggleClass('hidden');
+    $('.discover-results').toggleClass('hidden');
     $('.grid-2').toggleClass('hidden');
 }
 //search
 
-function newSearch() {
+function newDiscover() {
     ideaText.innerHTML = ""
     const randomActivity = newIdeas[Math.floor(Math.random() * newIdeas.length)];
     ideaText.innerHTML = randomActivity

@@ -2,18 +2,27 @@
     {{> header }}
     <div class="container">
         <div class="title-container">
-            <h2 class="user-name"></h2>
+            <h2>{{username}}'s Bucket List</h2>
             <div>
                 <div class="list-container">
-                    <ul class="user-list">
-                        {{#each bucketListItems}}
-                        <li>{{this.title}}</li>
-                        {{/each}}
-                    </ul>
+                    {{#if bucketListItems}}
+                        <div class="user-list">
+                            {{#each bucketListItems}}
+                                {{>listItem}}
+                            {{/each}}
+                        </div>
+                    {{else}}
+                        <div class="user-list">
+                            <h3>There are no items in this bucket list</h3>
+                        </div>
+                    {{/if}}
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/js/my-bucketlist.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/my-bucketlist.js"></script>
+    {{!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZmqaXxP63ku66TlRw05Ua1wyD8bEaLkA&callback=initMap&libraries=places&v=weekly"></script> --}}
      

@@ -19,7 +19,7 @@ $(document).ready(() => {
 
     $(".image-square-3").on("click", (event) => {
         event.preventDefault();
-        window.location.replace("/search");
+        window.location.replace("/discover");
     });
 
     $(".image-square-4").on("click", (event) => {

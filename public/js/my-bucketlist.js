@@ -1,14 +1,17 @@
-// const newActivity = require("./search");
+let invisibleMap;
 
-// $(document).ready(() => {
-//     if (newActivity !== "") {
-//         console.log("booyah")
-//     } else {
-//         console.log("suckah")
-//     }
 
-$(document).ready(() => {
-    $.get("/api/user_data").then(data => {
-        $(".user-name").text(`${data.username}'s Bucket List`);
+const deleteButtonArray = document.querySelectorAll(".deleteBtn");
+
+deleteButtonArray.forEach(function(listItem) {
+    listItem.addEventListener("click", () => {
+        const listItemId = listItem.dataset.id;
+        fetch(`/api/bucket-list/${listItemId}`, {
+            method: "DELETE"
+        })
+        .then((response) => response.json())
+        .then(() => {
+            location.reload();
+        })
     });
 });

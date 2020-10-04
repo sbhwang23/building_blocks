@@ -1,5 +1,7 @@
 const path = require("path");
 const db = require("../models");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -28,32 +30,48 @@ module.exports = function (app) {
                 style: "member.css"
             });
         });
-    app.get("/map", isAuthenticated,
-        (req, res) => {
+    app.get("/map", isAuthenticated, (req, res) => {
+        db.BucketList.findAll({
+            raw: true,
+            include: [db.User]
+        }).then((results) => {
             res.render("maps", {
-                style: "map.css"
+                style: "map.css",
+                mapPoints: results
             });
-        });
+        })
+
+    });
 
     app.get("/mybucketlist/:id", (req, res) => {
 
         const userId = req.params.id;
 
-        db.BucketList.findAll({
+        db.User.findOne({
             raw: true,
             where: {
-                UserId: userId
+                id: userId
             }
-        }).then((results) => {
-            res.render("mybucketlist", {
-                style: "style.css",
-                bucketListItems: results
+        }).then((userData) => {
+            const username = userData.username;
+
+            db.BucketList.findAll({
+                raw: true,
+                where: {
+                    UserId: userId
+                },
+                include: [db.User]
+            }).then((results) => {
+                res.render("mybucketlist", {
+                    style: "style.css",
+                    username: username,
+                    bucketListItems: results
+                });
             });
+
         });
 
-        // res.render("mybucketlist", {
-        //     style: "style.css"
-        // });
+            
     });
 
     app.get("/newactivity", (req, res) => {
@@ -61,7 +79,7 @@ module.exports = function (app) {
             style: "newactivity.css"
         });
     });
-    app.get("/search", isAuthenticated,
+    app.get("/discover", isAuthenticated,
         (req, res) => {
             res.render("search", {
                 style: "search.css"
