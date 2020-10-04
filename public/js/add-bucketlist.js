@@ -41,7 +41,8 @@ function initMap() {
         infowindow.close();
         marker.setVisible(false);
         const place = autocomplete.getPlace();
-        selectedLocation = place.place_id;
+        selectedLocation_id = place.place_id;
+        selectedLocation_name = place.name;
 
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
@@ -115,10 +116,10 @@ categoryInputOther.addEventListener("click", () => {
 });
 
 collaboratorsInputTrue.addEventListener("click", () => {
-    selectedCollaborators = "true";
+    selectedCollaborators = true;
 });
 collaboratorsInputFalse.addEventListener("click", () => {
-    selectedCollaborators = "false";
+    selectedCollaborators = false;
 });
 
 submitButton.onclick = function (e) {
@@ -126,26 +127,37 @@ submitButton.onclick = function (e) {
     e.preventDefault();
 
     fetch("/api/user_data")
-        .then((response) => response.json())
-        .then((userData) => {
-            const userId = userData.id;
+    .then((response) => response.json())
+    .then((userData) => {
+        const userId = userData.id;
 
-            const newActivity = {
-                title: titleInput.value,
-                description: descriptionInput.value,
-                category: selectedCategory,
-                collaborators: selectedCollaborators,
-                location: selectedLocation,
-                userId: userId
-            };
+        const newActivity = {
+            title: titleInput.value,
+            description: descriptionInput.value,
+            category: selectedCategory,
+            collaborators: selectedCollaborators,
+            location_id: selectedLocation_id,
+            location_name: selectedLocation_name,
+            userId: userId
+        };
 
-            console.log(newActivity);
-            console.log(JSON.stringify(newActivity));
-
-            fetch("/api/bucket-list", {
-                method: "POST",
-                body: JSON.stringify(newActivity),
-                headers: { "Content-type": "application/json; charset=UTF-8" }
+        fetch("/api/bucket-list", {
+            method: "POST",
+            body: JSON.stringify(newActivity),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+            })
+            .then(response => response.json()) 
+            .then(() => {
+                titleInput.value = "";
+                descriptionInput.value = "";
+                categoryInputAdventure.checked = false;
+                categoryInputHomebody.checked = false;
+                categoryInputCreate.checked = false;
+                categoryInputTakeAction.checked = false;
+                categoryInputOther.checked = false;
+                collaboratorsInputTrue.checked = false;
+                collaboratorsInputFalse.checked = false;
+                window.location.replace(`/mybucketlist/${userId}`);
             })
                 .then(response => console.log(response))
                 .then(() => {

@@ -20,32 +20,31 @@ function initMap() {
     };
 
     fetch("/api/bucket-list")
-        .then((response) => response.json())
-        .then((listData) => {
-            for (let i = 0; i < listData.length; i++) {
-                if (listData[i].location) {
-                    const request = {
-                        placeId: listData[i].location,
-                        fields: ["name", "geometry"]
-                    };
-                    const infowindow = new google.maps.InfoWindow();
-                    const infowindowContent = document.getElementById(`infowindow-${listData[i].id}`);
-                    infowindow.setContent(infowindowContent);
-                    const service = new google.maps.places.PlacesService(mainMap);
-                    service.getDetails(request, (place, status) => {
-                        if (status === google.maps.places.PlacesServiceStatus.OK) {
-                            const marker = new google.maps.Marker({
-                                map: mainMap,
-                                position: place.geometry.location,
-                            });
-                            google.maps.event.addListener(marker, "click", function () {
-                                infowindowContent.children.namedItem(`place-name-${listData[i].id}`).textContent = place.name;
-                                infowindow.open(mainMap, this);
-                            });
-                            marker.setVisible(true);
-                        }
-                    });
-                }
+    .then((response) => response.json())
+    .then((listData) => {
+        for (let i = 0; i < listData.length; i++) {
+            if (listData[i].location_id) {
+                const request = {
+                    placeId: listData[i].location_id,
+                    fields: ["geometry"]
+                };
+                const infowindow = new google.maps.InfoWindow();
+                const infowindowContent = document.getElementById(`infowindow-${listData[i].id}`);
+                infowindow.setContent(infowindowContent);
+                const service = new google.maps.places.PlacesService(mainMap);
+                service.getDetails(request, (place, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        const marker = new google.maps.Marker({
+                            map: mainMap,
+                            position: place.geometry.location,
+                        });
+                        google.maps.event.addListener(marker, "click", function () {
+                            infowindow.open(mainMap, this);
+                        });
+                        marker.setVisible(true);
+                    }
+                });
             }
-        });
-}
+        }
+    });
+};

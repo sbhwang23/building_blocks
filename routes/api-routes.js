@@ -71,7 +71,8 @@ module.exports = function (app) {
       description: req.body.description,
       category: req.body.category,
       collaborators: req.body.collaborators,
-      location: req.body.location,
+      location_id: req.body.location_id,
+      location_name: req.body.location_name,
       UserId: req.body.userId
     })
       .then((data) => {
