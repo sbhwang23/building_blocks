@@ -14,11 +14,8 @@ function initMap() {
         fetch(`/api/bucket-list/${userId}`)
         .then((response) => response.json())
         .then((bucketList) => {
-            console.log(bucketList);
             for (let i = 0; i < bucketList.length; i++) {
                 if (bucketList[i].location) {
-                    console.log(bucketList[i].location);
-
                     const request = {
                         placeId: bucketList[i].location,
                         fields: ["name"]
@@ -35,4 +32,19 @@ function initMap() {
         })
     });
 
+    const deleteButtonArray = document.querySelectorAll(".deleteBtn");
+
+    deleteButtonArray.forEach(function(listItem) {
+        listItem.addEventListener("click", () => {
+            const listItemId = listItem.dataset.id;
+            fetch(`/api/bucket-list/${listItemId}`, {
+                method: "DELETE"
+            })
+            .then((response) => response.json())
+            .then(() => {
+                location.reload();
+            })
+        })
+
+    })
 }

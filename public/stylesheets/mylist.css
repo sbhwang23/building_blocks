@@ -57,7 +57,9 @@ h2 {
 
 
 /*BUTTONS*/
-
+#delete {
+    display: inline;
+}
 
 /*HIDE MAP*/
 #invisibleMap {

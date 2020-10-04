@@ -74,13 +74,26 @@ module.exports = function (app) {
       location: req.body.location,
       UserId: req.body.userId
     })
-      .then(() => {
+      .then((data) => {
         // res.redirect("/member");
-        res.json();
+        res.json(data);
       })
       .catch(err => {
         res.status(401).json(err);
       })
   });
+
+  app.delete("/api/bucket-list/:id", (req, res) => {
+    const listItemId = req.params.id;
+
+    db.BucketList.destroy({
+      where: {
+        id: listItemId
+      }
+    }).then((data) => {
+      res.json(data);
+    })
+  })
+
 };
 

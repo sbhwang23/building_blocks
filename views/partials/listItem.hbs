@@ -1,11 +1,11 @@
 <div class="list-item">
-    <h3>{{title}}</h3>
+    <h3>{{title}}</h3> <button class="deleteBtn" data-id={{id}}>x</button>
     {{#if description}}
     <p>{{description}}</p>
     {{/if}}
     <p>category: {{category}}</p>
     {{#if location}}
-    <p>location:<span id="location-{{id}}"></span></p>
+    <p>location: <span id="location-{{id}}"></span></p>
     {{/if}}
     {{#if collaborators}}
     <p>seeking collaborators: yes</p>
