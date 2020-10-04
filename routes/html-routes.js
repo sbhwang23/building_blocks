@@ -54,7 +54,6 @@ module.exports = function (app) {
             },
             include: [db.BucketList]
         }).then((results) => {
-            console.log(results);
             res.render("mybucketlist", {
                 style: "style.css",
                 bucketListItems: results
@@ -69,7 +68,6 @@ module.exports = function (app) {
             //     include: [db.User]
             // }).then((results) => {
             //     console.log(results);
-            //     console.log(results[0].UserId);
             //     // console.log(results[0].User.username);
             //     res.render("mybucketlist", {
             //         style: "style.css",
