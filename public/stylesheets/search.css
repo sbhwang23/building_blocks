@@ -5,7 +5,7 @@
 }
 
 .circle-container {
-    box-shadow: -24px -24px 0px #243c4d, 24px 24px 0px #92f0ff;
+    box-shadow: -24px -24px 0px rgb(36 60 77), 24px 24px 0px rgb(146 240 255);
     height: 25em;
     width: 25em;
     display: flex;
@@ -17,8 +17,8 @@
     height: 60%;
     width: 60%;
     border-radius: 87px;
-    background: #5B96C1;
-    box-shadow: 28px 28px 0px #305066, -28px -28px 0px #86ddff;
+    background: rgb(91 150 193);
+    box-shadow: 28px 28px 0px rgb(48 80 102), -28px -28px 0px rgb(134 221 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr, 1fr;
-    background-color: #5c95c1;
+    background-color: rgb(92 149 193);
     min-height: 28em;
     min-width: 28em;
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -103,18 +103,18 @@
 /*WORDS*/
 
 h1 {
-    text-shadow: 1px 1px #243c4d, 1.5px 1.5px #243c4d, 2px 2px #243c4d;
+    text-shadow: 5px 2px rgb(36 60 77), 4px 0px rgb(36 60 77), 0px 1px rgb(36 60 77);
 }
 
 h3 {
-    color: white;
+    color: rgb(255 255 255);
 }
 
 
 /*BUTTONS*/
 
 .close {
-    color: white;
+    color: rgb(255 255 255);
     font-size: 1.6rem;
     font-family: "montserrat", sans-serif;
     cursor: pointer;

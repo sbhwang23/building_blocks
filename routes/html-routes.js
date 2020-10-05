@@ -71,7 +71,7 @@ module.exports = function (app) {
                     }
                 }).then((savedList) => {
                     res.render("mybucketlist", {
-                        style: "style.css",
+                        style: "mylist.css",
                         username: username,
                         bucketListItems: userList.concat(savedList)
                     });
