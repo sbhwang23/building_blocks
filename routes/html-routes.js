@@ -5,7 +5,7 @@ const Op = Sequelize.Op;
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function (app) {
+module.exports = function(app) {
     //LANDING HOME PAGE where user can login OR JOIN
     app.get("/", (req, res) => {
         if (req.isAuthenticated()) {
@@ -63,7 +63,7 @@ module.exports = function (app) {
                 include: [db.User]
             }).then((results) => {
                 res.render("mybucketlist", {
-                    style: "style.css",
+                    style: "mylist.css",
                     username: username,
                     bucketListItems: results
                 });
@@ -71,7 +71,7 @@ module.exports = function (app) {
 
         });
 
-            
+
     });
 
     app.get("/newactivity", (req, res) => {
