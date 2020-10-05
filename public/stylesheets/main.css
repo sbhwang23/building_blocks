@@ -207,7 +207,7 @@
     .btn {
         text-decoration: none;
         font-family: "montserrat", sans-serif;
-        transition: 0.2s linear;
+        transition: 0.3s ease;
     }
     
     .btn-default:hover {
