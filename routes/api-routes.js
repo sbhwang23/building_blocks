@@ -4,6 +4,7 @@ const passport = require("../config/passport");
 
 module.exports = function (app) {
 
+  // LOGIN
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     res.json({
       // username: req.user.username,
@@ -12,11 +13,13 @@ module.exports = function (app) {
     });
   });
 
+  // LOGOUT
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
 
+  // SIGN UP
   app.post("/api/signup", (req, res) => {
     db.User.create({
       username: req.body.username,
@@ -31,6 +34,7 @@ module.exports = function (app) {
       });
   });
 
+  // USER DATA
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
 
@@ -45,6 +49,7 @@ module.exports = function (app) {
     }
   });
 
+  // GET ALL BUCKET LIST ITEMS
   app.get("/api/bucket-list", (req, res) => {
     db.BucketList.findAll({})
       .then((list) => {
@@ -52,6 +57,7 @@ module.exports = function (app) {
       });
   });
 
+  // GET BUCKET LIST ITEM BY ID
   app.get("/api/bucket-list/:id", (req, res) => {
     const id = req.params.id;
 
@@ -66,6 +72,21 @@ module.exports = function (app) {
     });
   });
 
+  // GET BUCKET LIST ITEMS SEEKING COLLABORATORS
+  app.get("/api/collab", (req, res) => {
+    // const collab = req.params.collab;
+    db.BucketList.findAll({
+      // raw: true,
+      where: {
+        collaborators: true
+      }
+    })
+      .then((list) => {
+        res.json(list);
+      });
+  });
+
+  // POST BUCKET LIST ITEM
   app.post("/api/bucket-list", (req, res) => {
     // console.log(req.body);
     db.BucketList.create({
@@ -86,6 +107,7 @@ module.exports = function (app) {
       })
   });
 
+  // DELETE BUCKET LIST ITEM
   app.delete("/api/bucket-list/:id", (req, res) => {
     const listItemId = req.params.id;
 
@@ -98,6 +120,7 @@ module.exports = function (app) {
     })
   });
 
+  // GET SAVED BUCKET LIST ITEMS
   app.get("/api/saved-bucket-list", (req, res) => {
     db.SavedBucketList.findAll({})
     .then((data) => {
@@ -105,6 +128,7 @@ module.exports = function (app) {
     })
   })
 
+  // POST SAVED BUCKET LIST ITEM
   app.post("/api/saved-bucket-list", (req, res) => {
     // console.log(req.body);
     db.SavedBucketList.create({

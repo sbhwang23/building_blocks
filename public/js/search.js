@@ -14,7 +14,7 @@ const afterDiscover = document.querySelector('.discover-results');
 // const newIdeas = ["Eat a muffin", "Wash your hands you dirty bird"];
 // const newActivity = [];
 
-let listItemIds = [];
+const listItemIds = [];
 let userId;
 
 // GET USER ID
@@ -22,8 +22,9 @@ $.get("/api/user_data").then((userData) => {
     userId = userData.id;
 })
 
-//GET BUCKETLIST ITEMS
-$.get("/api/bucket-list").then((bucketList) => {
+//GET BUCKETLIST ITEM IDs
+$.get("/api/collab").then((bucketList) => {
+    console.log(bucketList);
     bucketList.forEach(function(activity) {
         listItemIds.push(activity.id);
     })
@@ -31,12 +32,13 @@ $.get("/api/bucket-list").then((bucketList) => {
 
 //Click Events
 
+// NEW IDEA BUTTON
 discoverButton.onclick = function(e) {
     $("#what-if").addClass("hidden");
     $(".discover-results").addClass("hidden");
     const randomIndex = Math.floor(Math.random() * listItemIds.length);
     const randomId = listItemIds[randomIndex];
-    // console.log(randomId);
+    console.log(randomId);
     $(`#discover-result-${randomId}`).toggleClass('hidden');
 }
 
@@ -50,8 +52,9 @@ discoverButton.onclick = function(e) {
 closeButtonArray.forEach(function(button) {
     button.onclick = function() {
         $(this).parent().parent().toggleClass('hidden');
+        $("#what-if").removeClass("hidden");
     };
-    $("#what-if").removeClass("hidden");
+    
 });
 
 // ADD TO LIST BUTTON
