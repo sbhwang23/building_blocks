@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    const logOutBtn = document.getElementById("LOGOUT");
+
     $.get("/api/user_data").then(data => {
         $(".user-name").text(data.username);
     });
@@ -26,4 +28,12 @@ $(document).ready(() => {
         event.preventDefault();
         window.location.replace("/map");
     });
+
+    logOutBtn.onmousemove = function() {
+        jelloOn()
+    }
+
+    function jelloOn() {
+        $('#LOGOUT').toggleClass('jello-vertical');
+    }
 });

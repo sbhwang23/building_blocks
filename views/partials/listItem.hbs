@@ -1,15 +1,15 @@
 <div class="list-item">
     
-    <h3>{{title}}</h3> <button class="deleteBtn" data-id={{id}}>x</button>
+    <h3>{{title}}</h3> 
     {{#if description}}
-    <p>{{description}}</p>
+    <p id="description">{{description}}</p>
     {{/if}}
-    <p>category: {{category}}</p>
-    <p>location: {{location_name}}</p>
+    <p><span>category:</span>    {{category}}</p>
+    <p><span>location:</span>    {{location_name}}</p>
     {{#if collaborators}}
-    <p>seeking collaborators: yes</p>
+    <p><span>seeking collaborators:</span>    yes</p>
     {{else}}
-    <p>seeking collaborators: no</p>
+    <p><span>seeking collaborators:</span>    no</p>
     {{/if}}
-    
+    <button class="btn defaultbutton deleteBtn" data-id={{id}}>REMOVE</button>
 </div>

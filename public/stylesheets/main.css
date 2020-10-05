@@ -207,7 +207,7 @@
     .btn {
         text-decoration: none;
         font-family: "montserrat", sans-serif;
-        transition: 0.2s linear;
+        transition: 0.3s ease;
     }
     
     .btn-default:hover {
@@ -229,4 +229,17 @@
         -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
         -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     }
-    /*TOGGLE CLASSES*/
+    /*MEDIA QUERIES*/
+    
+    @media (max-width: 43em) {
+        .wrapper {
+            min-height: 100vh;
+            overflow: scroll;
+        }
+        h1 {
+            font-size: 3.2rem;
+        }
+        form.create-form {
+            margin: .2em;
+        }
+    }

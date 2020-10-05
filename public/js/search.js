@@ -3,11 +3,24 @@ const ideaText = document.querySelector('.idea');
 //BUTTONS
 const discoverButton = document.querySelector('#new-idea');
 const listButton = document.querySelector('.list');
-const doOverButton = document.querySelector('.tryAgain');
-// const closeButton = document.querySelector('.close-button')
-const closeButtonArray = document.querySelectorAll('.close-button');
+const doOverButton = document.querySelector('.tryAgain'); <<
+<<
+<<
+<
+HEAD
+const closeButton = document.querySelector('.close-button')
+    //DIVS TO TOGGLE HIDE ON/OFF
+    ===
+    ===
+    =
+    // const closeButton = document.querySelector('.close-button')
+    const closeButtonArray = document.querySelectorAll('.close-button');
 const discoverResultsArray = document.querySelectorAll('.discover-results');
 //DIVS TO TOGGLE HIDE ON/OFF
+>>>
+>>>
+>
+75 ba3e898ab7fb0704ccf9505ed8f92c57179a4d
 const beforeDiscover = document.querySelector('.start-discover');
 const afterDiscover = document.querySelector('.discover-results');
 
@@ -26,45 +39,26 @@ $.get("/api/bucket-list").then((bucketList) => {
 //Click Events
 
 discoverButton.onclick = function(e) {
-    $("#what-if").addClass("hidden");
-    $(".discover-results").addClass("hidden");
-    const randomIndex = Math.floor(Math.random() * listItemIds.length);
-    const randomId = listItemIds[randomIndex];
-    $(`#discover-result-${randomId}`).toggleClass('hidden');
+    e.preventDefault();
+    hideNSeek();
+    newDiscover();
 }
 
-// discoverButton.onclick = function (e) {
-//     e.preventDefault();
-//     hideNSeek();
-//     newDiscover();
-// }
+closeButton.onclick = function() {
+    hideNSeek();
+    ideaText.innerHTML = ""
+}
 
-closeButtonArray.forEach(function(button) {
-    button.onclick = function() {
-        $(this).parent().parent().toggleClass('hidden');
-    };
-    $("#what-if").removeClass("hidden");
-});
+doOverButton.onclick = function(e) {
+    e.preventDefault();
+    newDiscover();
+}
 
-// closeButton.onclick = function(e) {
-//     $(this).parent().parent().toggleClass('hidden');
-// }
-
-// closeButton.onclick = function () {
-//     hideNSeek();
-//     ideaText.innerHTML = ""
-// }
-
-// doOverButton.onclick = function (e) {
-//     e.preventDefault();
-//     newDiscover();
-// }
-
-// listButton.onclick = function () {
-//     const x = ideaText.innerHTML;
-//     newActivity.push(x);
-//     window.location.href = '/newactivity'
-// }
+listButton.onclick = function() {
+    const x = ideaText.innerHTML;
+    newActivity.push(x);
+    window.location.href = '/newactivity'
+}
 
 // hiding showing divs on initial search
 // function hideNSeek() {

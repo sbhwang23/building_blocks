@@ -15,9 +15,6 @@
 .title-container {
     width: 100%;
     background-color: rgb(239 248 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -25,15 +22,30 @@
 }
 
 .list-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background-color: rgb(239 248 255);
+    border-radius: 1rem;
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     border-radius: 1rem;
+}
+
+.user-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-item {
+    width: 80%;
+    background-color: rgb(175 187 227);
+    border-radius: 14px;
+    line-height: 1.5;
+    padding: 2em;
+    margin-bottom: 2em;
+    max-width: 45em;
 }
 
 
@@ -42,26 +54,80 @@
 
 /*WORDS*/
 
-#hidden-logo {
-    text-shadow: 5px 5px #adbbe3, 1px 2px #afbbe3, 4px 3px #afbbe3;
+h1 {
+    text-shadow: 5px 2px rgb(140 178 227), 4px 0px rgb(140 178 227), 0px 1px rgb(140 178 227);
 }
 
 h2 {
+    font-weight: 200;
     text-shadow: none;
-    font-weight: 800;
-    color: rgb(239 248 255);
+    color: rgb(34 34 96);
     font-size: 2.2rem;
-    padding: 1em;
+    padding: 1.5em;
+    text-transform: capitalize;
+}
+
+h2:hover {
+    text-shadow: none;
+    position: initial;
+}
+
+h3 {
+    padding: .5em;
+    color: rgb(255 255 255);
+    border-bottom: rgb(240 248 255);
+    border-left: .5em solid rgb(240 248 255 / 48%);
+    border-radius: .4em;
+}
+
+#description {
+    padding: .5em;
+    color: rgb(34 34 96);
+    font-style: italic;
     text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: .8em;
+    font-weight: 600;
+}
+
+p {
+    text-transform: capitalize;
+    color: rgb(255 255 255);
+    font-size: 1.2rem;
+}
+
+span {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(34 34 96);
 }
 
 
 /*BUTTONS*/
+
 #delete {
     display: inline;
 }
 
+.deleteBtn {
+    border: .2em solid rgb(173 187 227);
+    padding: .4em;
+    background-color: rgb(173 187 227);
+    margin-top: 1em;
+    font-size: 1.0rem;
+    color: rgb(197 58 77 / 37%);
+    transition: 0.2s ease;
+}
+
+.deleteBtn:hover {
+    cursor: pointer;
+    color: rgb(197 58 77 / 100%);
+    font-weight: 600;
+}
+
+
 /*HIDE MAP*/
+
 #invisibleMap {
     display: none;
 }
