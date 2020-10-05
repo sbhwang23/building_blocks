@@ -140,6 +140,8 @@ submitButton.onclick = function (e) {
             location_name: selectedLocation_name,
             userId: userId
         };
+        // console.log(newActivity);
+        // console.log(JSON.stringify(newActivity));
 
         fetch("/api/bucket-list", {
             method: "POST",
@@ -158,20 +160,7 @@ submitButton.onclick = function (e) {
                 collaboratorsInputTrue.checked = false;
                 collaboratorsInputFalse.checked = false;
                 window.location.replace(`/mybucketlist/${userId}`);
-            })
-                .then(response => response.json())
-                .then(() => {
-                    titleInput.value = "";
-                    descriptionInput.value = "";
-                    categoryInputAdventure.checked = false;
-                    categoryInputHomebody.checked = false;
-                    categoryInputCreate.checked = false;
-                    categoryInputTakeAction.checked = false;
-                    categoryInputOther.checked = false;
-                    collaboratorsInputTrue.checked = false;
-                    collaboratorsInputFalse.checked = false;
-                    window.location.replace(`/mybucketlist/${userId}`);
-                })
-                .catch(err => console.log(err));
-        });
+            });
+        
+    });
 };

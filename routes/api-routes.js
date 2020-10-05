@@ -53,19 +53,21 @@ module.exports = function (app) {
   });
 
   app.get("/api/bucket-list/:id", (req, res) => {
-    const userId = req.params.id;
+    const id = req.params.id;
 
-    db.BucketList.findAll({
+    db.BucketList.findOne({
       raw: true,
       where: {
-        UserId: userId
+        id: id
       }
-    }).then((list) => {
-      res.json(list);
-    })
-  })
+    }).then((activity) => {
+      // console.log(activity);
+      res.json(activity);
+    });
+  });
 
   app.post("/api/bucket-list", (req, res) => {
+    // console.log(req.body);
     db.BucketList.create({
       title: req.body.title,
       description: req.body.description,
@@ -94,12 +96,25 @@ module.exports = function (app) {
     }).then((data) => {
       res.json(data);
     })
+  });
+
+  app.get("/api/saved-bucket-list", (req, res) => {
+    db.SavedBucketList.findAll({})
+    .then((data) => {
+      res.json(data);
+    })
   })
 
-  app.post("/api/links", (req, res) => {
-    db.Links.create({
-      userId: req.body.userId,
-      bucketListId: req.body.bucketListId
+  app.post("/api/saved-bucket-list", (req, res) => {
+    // console.log(req.body);
+    db.SavedBucketList.create({
+      title: req.body.title,
+      description: req.body.description,
+      category: req.body.category,
+      collaborators: req.body.collaborators,
+      location_id: req.body.location_id,
+      location_name: req.body.location_name,
+      UserId: req.body.userId
     }).then((data) => {
       res.json(data);
     })

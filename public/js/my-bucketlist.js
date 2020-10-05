@@ -1,8 +1,3 @@
-const newActivity = require("./search");
-
-console.log(newActivity);
-
-
 const deleteButtonArray = document.querySelectorAll(".deleteBtn");
 
 deleteButtonArray.forEach(function(listItem) {

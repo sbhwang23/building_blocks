@@ -11,10 +11,16 @@ const discoverResultsArray = document.querySelectorAll('.discover-results');
 const beforeDiscover = document.querySelector('.start-discover');
 const afterDiscover = document.querySelector('.discover-results');
 
-const newIdeas = ["Eat a muffin", "Wash your hands you dirty bird"];
-const newActivity = ["testtesttest"];
+// const newIdeas = ["Eat a muffin", "Wash your hands you dirty bird"];
+// const newActivity = [];
 
 let listItemIds = [];
+let userId;
+
+// GET USER ID
+$.get("/api/user_data").then((userData) => {
+    userId = userData.id;
+})
 
 //GET BUCKETLIST ITEMS
 $.get("/api/bucket-list").then((bucketList) => {
@@ -30,6 +36,7 @@ discoverButton.onclick = function(e) {
     $(".discover-results").addClass("hidden");
     const randomIndex = Math.floor(Math.random() * listItemIds.length);
     const randomId = listItemIds[randomIndex];
+    // console.log(randomId);
     $(`#discover-result-${randomId}`).toggleClass('hidden');
 }
 
@@ -39,11 +46,39 @@ discoverButton.onclick = function(e) {
 //     newDiscover();
 // }
 
+// CLOSE BUTTON
 closeButtonArray.forEach(function(button) {
     button.onclick = function() {
         $(this).parent().parent().toggleClass('hidden');
     };
     $("#what-if").removeClass("hidden");
+});
+
+// ADD TO LIST BUTTON
+$(".list").on("click", function() {
+    let listItemId = $(this).attr("data-id");
+
+    $.get(`/api/bucket-list/${listItemId}`)
+    .then((data) => {
+        // console.log(data);
+        $.post("/api/saved-bucket-list", {
+            title: data.title,
+            description: data.description,
+            category: data.category,
+            collaborators: JSON.parse(data.collaborators),
+            location_id: data.location_id,
+            location_name: data.location_name,
+            userId: JSON.parse(userId)
+        })
+        .then(() => {
+            console.log("activity saved");
+        }).catch(err => {
+            console.log(err);
+        });
+    });
+
+
+    
 });
 
 // closeButton.onclick = function(e) {
