@@ -112,4 +112,10 @@ input {
 
 .btn-default {
     margin-bottom: 2em;
+    transition: ease 2s;
+}
+
+.btn-default:hover {
+    background-color: transparent;
+    color: rgb(168 186 227);
 }
