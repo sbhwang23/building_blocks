@@ -5,7 +5,7 @@
 }
 
 .welcome {
-    color: #99b6e3;
+    color: rgb(153 182 227);
     text-shadow: none;
 }
 
@@ -29,8 +29,12 @@
 
 input {
     padding: .6em;
-    border: .2em solid #e7f0fe;
-    background-color: #e7f0fe;
+    border: .2em solid rgb(231 240 254);
+    background-color: rgb(231 240 254);
+}
+
+.login {
+    margin-bottom: 2em;
 }
 
 
@@ -38,7 +42,7 @@ input {
 
 .grid-container-3 {
     align-items: center;
-    background-color: #BDCFDC;
+    background-color: rgb(189 207 220);
     box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -webkit-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
     -moz-box-shadow: -7px 14px 0px 0px rgba(0, 41, 158, 0.3);
@@ -83,17 +87,17 @@ input {
 /*WORDS*/
 
 h1 {
-    color: #f0f9ff;
-    text-shadow: 3px 1px #c8efff, 4px 1.5px #cbf1ff, 2px 2px #caf1ff;
+    color: rgb(240 249 255);
+    text-shadow: 3px 1px rgb(200 239 255), 4px 1.5px rgb(203 241 255), 2px 2px rgb(202 241 255);
 }
 
 h2:hover {
-    text-shadow: 1px 1px #91E4FE, 2px 2px #91E4FE, 3px 3px #91E4FE, 4px 4px #91E4FE, 5px 5px #91E4FE, 6px 6px #91E4FE;
+    text-shadow: 1px 1px rgb(145 228 254), 2px 2px rgb(145 228 254), 3px 3px rgb(145 228 254), 4px 4px rgb(145 228 254), 5px 5px rgb(145 228 254), 6px 6px rgb(145 228 254);
 }
 
 .directions {
     font-size: 1.6rem;
-    color: #8db1e3;
+    color: rgb(141 177 227);
     text-shadow: none;
     margin-top: .5em;
 }
@@ -106,7 +110,7 @@ h2:hover {
 }
 
 .fancy {
-    color: white;
+    color: rgb(255 255 255);
     font-family: 'Beth Ellen', cursive;
     font-size: 2.0rem;
 }
@@ -116,7 +120,7 @@ p {
 }
 
 p>a {
-    color: #869dcb;
+    color: rgb(134 157 203);
     transition: 0.2s linear;
     font-family: 'Montserrat', sans-serif;
 }
@@ -130,9 +134,9 @@ p>a:hover {
 /*BUTTONS*/
 
 .btn-default {
-    border: .2em solid #adbbe3;
+    border: .2em solid rgb(173 187 227);
     padding: .4em;
-    background-color: #adbbe3;
+    background-color: rgb(173 187 227);
     margin-top: 1em;
 }
 
