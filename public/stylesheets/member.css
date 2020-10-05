@@ -138,20 +138,28 @@
     /*WORDS*/
     
     h1 {
-        text-shadow: 1px 1px #91e4fe, 1.5px 1.5px #91e4fe, 2px 2px #91e4fe;
+        text-shadow: none;
+    }
+    
+    h2 {
+        text-shadow: none;
     }
     
     #slogan {
+        color: rgb(140 178 227);
         font-weight: 400;
         font-style: italic;
-        color: #68a1d3;
         font-size: 1.6rem;
         padding: 2em 1em 1em 1em;
     }
     
     .my-list {
-        color: #5c95c1;
+        color: rgb(140 178 227);
         padding: .8em;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .new-activity {
@@ -164,7 +172,7 @@
         text-shadow: 1px 1px rgba(91, 150, 193, 1), 2px 2px rgba(91, 150, 193, 1), 3px 3px rgba(91, 150, 193, 1), 4px 4px rgba(91, 150, 193, 1), 5px 5px, rgba(91, 150, 193, 1), 6px 6px, rgba(91, 150, 193, 1);
     }
     
-    .search {
+    .discover {
         color: rgba(255, 255, 255, 1);
         padding: .8em;
     }
@@ -175,23 +183,22 @@
     }
     
     .welcome {
-        color: rgb(255 255 255);
+        color: rgb(140 178 227);
         font-size: 5rem;
-        text-shadow: 1px 1px rgba(145, 228, 254, 1), 2px 2px rgba(145, 228, 254, 1), 3px 3px rgba(145, 228, 254, 1), -2px 1px 7px rgb(167 186 228);
+        text-shadow: none;
     }
     
     h3.user-name {
         text-transform: uppercase;
-        color: rgb(92 149 193);
+        color: rgba(91, 150, 193, 1);
         font-weight: 600;
     }
     
     #LOGOUT>a {
         border-radius: 8px;
-        box-shadow: inset 4px 0px 4px 0px rgb(212 212 212), inset -1px -1px 0px 0px rgb(212 212 212);
-        padding: .5em;
+        padding: .4em;
         color: rgb(94 154 197);
-        text-shadow: 0.5px 0.5px rgb(145 178 227), 1px 1px rgba(145, 228, 254, 1), 1.5px 1.5px rgba(145, 228, 254, 1);
+        font-size: 1.0rem;
     }
     /*BUTTONS*/
     
@@ -208,6 +215,7 @@
     }
     
     #LOGOUT {
+        color: rgb(140 178 227);
         margin-top: 1em;
         font-size: 1.2rem;
         background-color: rgb(255 255 255);
@@ -224,13 +232,13 @@
         text-decoration: none;
     }
     /*IMAGES*/
-    
-    .square-1 {
+    /* .square-1 {
         background-repeat: no-repeat;
         background-image: url(images/icons/rocket.svg);
         background-position-y: 7em;
         background-position-x: center;
     }
+  */
     
     .square-2 {
         background-repeat: no-repeat;
@@ -261,11 +269,11 @@
     .image-square-1 {
         border-radius: 12px;
         background: rgba(255, 255, 255, 1);
-        box-shadow: 5px 5px 4px #d4d4d4, -5px -5px 4px rgb(255 255 255);
+        box-shadow: 5px 5px 4px rgb(212 212 212), -5px -5px 4px rgb(255 255 255);
     }
     
     .image-square-1:active {
-        box-shadow: 5px 1px 4px #c7c7c7, -5px -5px 4px rgb(255 255 255);
+        box-shadow: 5px 1px 4px rgb(199 199 199), -5px -5px 4px rgb(255 255 255);
         transform: translateY(4px);
         transform: translateX(4px);
     }
@@ -273,11 +281,11 @@
     .image-square-2 {
         border-radius: 12px;
         background: rgba(145, 228, 254, 1);
-        box-shadow: -5px 5px 4px #7bc2d8, 5px -5px 4px #a7ffff;
+        box-shadow: -5px 5px 4px rgb(123 194 216), 5px -5px 4px rgb(167 255 255);
     }
     
     .image-square-2:active {
-        box-shadow: -5px 5px 4px #6cbbd4, 5px -5px 4px #a7ffff;
+        box-shadow: -5px 5px 4px rgb(108 187 212), 5px -5px 4px rgb(167 255 255);
         transform: translateY(-4px);
         transform: translateX(-4px);
     }
@@ -285,11 +293,11 @@
     .image-square-3 {
         border-radius: 12px;
         background: rgba(91, 150, 193, 1);
-        box-shadow: 5px -5px 4px #4c7da0, -5px 5px 4px #6ab0e2;
+        box-shadow: 5px -5px 4px rgb(76 125 160), -5px 5px 4px rgb(106 176 226);
     }
     
     .image-square-3:active {
-        box-shadow: 5px -5px 4px #5387ad, -5px 5px 4px #6ab0e2;
+        box-shadow: 5px -5px 4px rgb(83 135 173), -5px 5px 4px rgb(106 176 226);
         transform: translateY(4px);
         transform: translateX(4px);
     }
@@ -297,11 +305,11 @@
     .image-square-4 {
         border-radius: 12px;
         background: rgba(179, 244, 97, 1);
-        box-shadow: -5px -5px 4px #98cf52, 5px 5px 4px #ceff70;
+        box-shadow: -5px -5px 4px rgb(152 207 82), 5px 5px 4px rgb(206 255 112);
     }
     
     .image-square-4:active {
-        box-shadow: -5px -5px 4px #8fcb43, 5px 5px 4px #ceff70;
+        box-shadow: -5px -5px 4px rgb(143 203 67), 5px 5px 4px rgb(206 255 112);
         transform: translateY(4px);
         transform: translateX(-4px);
     }
