@@ -5,7 +5,7 @@ const discoverButton = document.querySelector('.new-idea');
 const listButton = document.querySelector('.list');
 const doOverButton = document.querySelector('.tryAgain');
 const closeButton = document.querySelector('.close-button')
-//DIVS TO TOGGLE HIDE ON/OFF
+    //DIVS TO TOGGLE HIDE ON/OFF
 const beforeDiscover = document.querySelector('.start-discover');
 const afterDiscover = document.querySelector('.discover-results');
 
@@ -14,23 +14,23 @@ const newActivity = [];
 
 //Click Events
 
-discoverButton.onclick = function (e) {
+discoverButton.onclick = function(e) {
     e.preventDefault();
     hideNSeek();
     newDiscover();
 }
 
-closeButton.onclick = function () {
+closeButton.onclick = function() {
     hideNSeek();
     ideaText.innerHTML = ""
 }
 
-doOverButton.onclick = function (e) {
+doOverButton.onclick = function(e) {
     e.preventDefault();
     newDiscover();
 }
 
-listButton.onclick = function () {
+listButton.onclick = function() {
     const x = ideaText.innerHTML;
     newActivity.push(x);
     window.location.href = '/newactivity'
