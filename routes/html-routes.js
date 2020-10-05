@@ -54,31 +54,34 @@ module.exports = function (app) {
             }
         }).then((userData) => {
             const username = userData.username;
-            let AllListItems;
-
             db.BucketList.findAll({
                 raw: true,
                 where: {
                     UserId: userId
                 }
             }).then((userList) => {
-                // const AllListItems = userList;
-                db.Links.findAll({
+                console.log(userList);
+                console.log(typeof userList);
+                db.SavedBucketList.findAll({
                     raw: true,
                     where: {
-                        userId: userId
+                        UserId: userId
                     }
+                }).then((savedList) => {
+                    console.log(savedList);
+                    console.log(typeof savedList);
+                    res.render("mybucketlist", {
+                        style: "style.css",
+                        username: username,
+                        bucketListItems: userList.concat(savedList)
+                    });
                 })
             });
         });
     });
 
     
-    res.render("mybucketlist", {
-        style: "style.css",
-        username: username,
-        bucketListItems: AllListItems
-    });
+    
 
 
     app.get("/newactivity", (req, res) => {
