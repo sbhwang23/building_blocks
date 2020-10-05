@@ -1,5 +1,26 @@
 let mainMap;
 
+function setIcon(category) {
+    let imageIcon;
+    switch(category) {
+        case "adventure":
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png";
+            break;
+        case "homebody": 
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png";
+            break;
+        case "create":
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_orange.png";
+            break;
+        case "take action":
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png";
+            break;
+        default:
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png";
+    }
+    return imageIcon;
+}
+
 function initMap() {
     mainMap = new google.maps.Map(document.getElementById("mainMap"), {
         center: { lat: 0, lng: 0 },
@@ -23,6 +44,7 @@ function initMap() {
     .then((response) => response.json())
     .then((listData) => {
         for (let i = 0; i < listData.length; i++) {
+            const activityCategory = listData[i].category;
             if (listData[i].location_id) {
                 const request = {
                     placeId: listData[i].location_id,
@@ -37,6 +59,7 @@ function initMap() {
                         const marker = new google.maps.Marker({
                             map: mainMap,
                             position: place.geometry.location,
+                            icon: setIcon(activityCategory)
                         });
                         google.maps.event.addListener(marker, "click", function () {
                             infowindow.open(mainMap, this);

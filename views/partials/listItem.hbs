@@ -11,5 +11,10 @@
     {{else}}
     <p><span>seeking collaborators:</span>    no</p>
     {{/if}}
-    <button class="btn defaultbutton deleteBtn" data-id={{id}}>REMOVE</button>
+
+    {{#if bucketListId}}
+        <button class="deleteBtn" data-id={{bucketListId}}>REMOVE</button>
+    {{else}}
+        <button class="deleteBtn" data-id={{id}}>REMOVE</button>
+    {{/if}}
 </div>
