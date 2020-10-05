@@ -115,8 +115,17 @@ module.exports = function (app) {
       where: {
         id: listItemId
       }
-    }).then((data) => {
-      res.json(data);
+    }).then(() => {
+      console.log("removed from BucketList");
+      db.SavedBucketList.destroy({
+        where: {
+          bucketListId: listItemId
+        }
+      }).then((data) => {
+        console.log("removed from SavedBucketList");
+        res.json(data);
+      })
+      
     })
   });
 
@@ -138,7 +147,8 @@ module.exports = function (app) {
       collaborators: req.body.collaborators,
       location_id: req.body.location_id,
       location_name: req.body.location_name,
-      UserId: req.body.userId
+      UserId: req.body.userId,
+      bucketListId: req.body.bucketListId
     }).then((data) => {
       res.json(data);
     })

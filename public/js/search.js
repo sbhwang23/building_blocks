@@ -69,7 +69,8 @@ $(".list").on("click", function() {
             collaborators: JSON.parse(data.collaborators),
             location_id: data.location_id,
             location_name: data.location_name,
-            userId: JSON.parse(userId)
+            userId: JSON.parse(userId),
+            bucketListId: JSON.parse(listItemId)
         })
         .then(() => {
             window.location.replace(`/mybucketlist/${userId}`);

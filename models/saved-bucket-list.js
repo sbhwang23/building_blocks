@@ -21,6 +21,9 @@ module.exports = function (sequelize, DataTypes) {
       },
       UserId: {
           type: DataTypes.INTEGER
+      },
+      bucketListId: {
+        type: DataTypes.INTEGER
       }
     });
   
