@@ -7,9 +7,12 @@
                     <div class="circle">
                         <div class="map-box-container">
                             <div class="discover-container start-discover">
-                                <h3 class="discover">What if you...</h3>
+                                <h3 id="what-if" class="discover">What if you...</h3>
                             </div>
-                            <div class="discover-container discover-results hidden">
+                            {{#each bucketListItems}}
+                                {{> discover-results}}
+                            {{/each}}
+                            {{!-- <div class="discover-container discover-results hidden">
                                 <div class="grid-style-display">
                                     <div class="grid-close-1 close-button">
                                         <p class="close">x</p>
@@ -20,13 +23,13 @@
                                 </div>
                                 <button class="btn btn-default list">+ to list</button>
                                 <button class="btn btn-default tryAgain">NEW IDEA</button>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-2">
-                <button class="btn btn-default new-idea">NEW IDEA</button>
+                <button id="new-idea" class="btn btn-default new-idea">NEW IDEA</button>
             </div>
         </div>
     </div>

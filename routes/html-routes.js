@@ -79,12 +79,16 @@ module.exports = function(app) {
             style: "newactivity.css"
         });
     });
-    app.get("/discover", isAuthenticated,
-        (req, res) => {
+    app.get("/discover", isAuthenticated, (req, res) => {
+        db.BucketList.findAll({
+            raw: true,
+        }).then((list) => {
             res.render("search", {
-                style: "search.css"
+                style: "search.css",
+                bucketListItems: list
             });
-        });
+        })
+    });
 };
 
 //const path = require("path");
