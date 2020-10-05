@@ -4,19 +4,19 @@ function setIcon(category) {
     let imageIcon;
     switch(category) {
         case "adventure":
-            imageIcon = "http://maps.google.com/mapfiles/kml/pal2/icon12.png";
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png";
             break;
         case "homebody": 
-            imageIcon = "http://maps.google.com/mapfiles/kml/pal2/icon28.png";
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_blue.png";
             break;
         case "create":
-            imageIcon = "http://maps.google.com/mapfiles/kml/pal4/icon47.png";
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_orange.png";
             break;
         case "take action":
-            imageIcon = "http://maps.google.com/mapfiles/kml/pal3/icon27.png";
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png";
             break;
         default:
-            imageIcon = "http://maps.google.com/mapfiles/kml/pal2/icon13.png";
+            imageIcon = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_white.png";
     }
     return imageIcon;
 }
