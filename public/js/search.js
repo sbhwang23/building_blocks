@@ -10,7 +10,14 @@ const beforeDiscover = document.querySelector('.start-discover');
 const afterDiscover = document.querySelector('.discover-results');
 
 const newIdeas = ["Eat a muffin", "Wash your hands you dirty bird"];
-const newActivity = [];
+const newActivity = ["testtesttest"];
+
+//GET BUCKETLIST ITEMS
+$.get("/api/bucket-list").then((bucketList) => {
+    for (let i = 0; i < bucketList.length; i++) {
+        newIdeas.push(bucketList[i].title);
+    };
+})
 
 //Click Events
 
@@ -50,4 +57,4 @@ function newDiscover() {
     ideaText.innerHTML = randomActivity
 }
 
-//module.exports = newActivity[0];
+// exports.newActivityTitle = newActivity;

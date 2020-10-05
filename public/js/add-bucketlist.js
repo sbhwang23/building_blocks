@@ -159,7 +159,7 @@ submitButton.onclick = function (e) {
                 collaboratorsInputFalse.checked = false;
                 window.location.replace(`/mybucketlist/${userId}`);
             })
-                .then(response => console.log(response))
+                .then(response => response.json())
                 .then(() => {
                     titleInput.value = "";
                     descriptionInput.value = "";

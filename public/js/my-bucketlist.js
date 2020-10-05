@@ -1,4 +1,6 @@
-let invisibleMap;
+const newActivity = require("./search");
+
+console.log(newActivity);
 
 
 const deleteButtonArray = document.querySelectorAll(".deleteBtn");
