@@ -96,5 +96,17 @@ module.exports = function (app) {
     })
   })
 
+  app.post("/api/links", (req, res) => {
+    db.Links.create({
+      userId: req.body.userId,
+      bucketListId: req.body.bucketListId
+    }).then((data) => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    })
+  });
+
 };
 
