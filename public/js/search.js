@@ -4,17 +4,23 @@ const ideaText = document.querySelector('.idea');
 const discoverButton = document.querySelector('#new-idea');
 const listButton = document.querySelector('.list');
 const doOverButton = document.querySelector('.tryAgain'); <<
-<< << < HEAD
+<<
+<<
+<
+HEAD
 const closeButton = document.querySelector('.close-button')
     //DIVS TO TOGGLE HIDE ON/OFF
     ===
-    === =
+    ===
+    =
     // const closeButton = document.querySelector('.close-button')
     const closeButtonArray = document.querySelectorAll('.close-button');
 const discoverResultsArray = document.querySelectorAll('.discover-results');
 //DIVS TO TOGGLE HIDE ON/OFF
 >>>
->>> > 75 ba3e898ab7fb0704ccf9505ed8f92c57179a4d
+>>>
+>
+75 ba3e898ab7fb0704ccf9505ed8f92c57179a4d
 const beforeDiscover = document.querySelector('.start-discover');
 const afterDiscover = document.querySelector('.discover-results');
 
