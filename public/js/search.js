@@ -24,7 +24,6 @@ $.get("/api/user_data").then((userData) => {
 
 //GET BUCKETLIST ITEM IDs
 $.get("/api/collab").then((bucketList) => {
-    console.log(bucketList);
     bucketList.forEach(function(activity) {
         listItemIds.push(activity.id);
     })
@@ -38,7 +37,6 @@ discoverButton.onclick = function(e) {
     $(".discover-results").addClass("hidden");
     const randomIndex = Math.floor(Math.random() * listItemIds.length);
     const randomId = listItemIds[randomIndex];
-    console.log(randomId);
     $(`#discover-result-${randomId}`).toggleClass('hidden');
 }
 
@@ -74,7 +72,7 @@ $(".list").on("click", function() {
             userId: JSON.parse(userId)
         })
         .then(() => {
-            console.log("activity saved");
+            window.location.replace(`/mybucketlist/${userId}`);
         }).catch(err => {
             console.log(err);
         });
