@@ -55,7 +55,7 @@ function initMap() {
                 infowindow.setContent(infowindowContent);
                 const service = new google.maps.places.PlacesService(mainMap);
                 service.getDetails(request, (place, status) => {
-                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    // if (status === google.maps.places.PlacesServiceStatus.OK) {
                         const marker = new google.maps.Marker({
                             map: mainMap,
                             position: place.geometry.location,
@@ -65,7 +65,7 @@ function initMap() {
                             infowindow.open(mainMap, this);
                         });
                         marker.setVisible(true);
-                    }
+                    // }
                 });
             }
         }
